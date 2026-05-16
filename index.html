@@ -2,7 +2,7 @@
 <html lang="zh-CN" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=720">
   <meta name="description" content="蒋天祺 — 产品经理实习生 | 个人简历与项目作品集">
   <title>蒋天祺 | 产品经理</title>
 
@@ -523,9 +523,16 @@
     ::-webkit-scrollbar-thumb { background: rgba(148,163,184,0.3); border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: rgba(148,163,184,0.5); }
 
-    /* ========== MOBILE RESPONSIVE (< 640px) ========== */
-    @media (max-width: 639px) {
-      /* --- Sections: let content flow naturally, remove forced full-screen --- */
+    /* ========== SKILLS GRID DESKTOP: force 3 cards in one row ========== */
+    @media (min-width: 768px) {
+      #skillProductCard  { grid-row: 1; grid-column: 1; }
+      #skillAICard       { grid-row: 1; grid-column: 2; }
+      #skillEnglishCard  { grid-row: 1; grid-column: 3; }
+    }
+
+    /* ========== MOBILE RESPONSIVE (< 768px) ========== */
+    @media (max-width: 767px) {
+      /* --- Sections: tighter vertical rhythm --- */
       #education,
       #skills,
       #experience,
@@ -533,12 +540,64 @@
       #projects,
       #campus [style*="min-height"] {
         min-height: auto !important;
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
+        padding-top: 1.25rem !important;
+        padding-bottom: 1.25rem !important;
       }
-      /* First section after hero needs extra top padding for navbar */
       #education {
-        padding-top: 5rem !important;
+        padding-top: 4rem !important;
+      }
+
+      /* --- Tighten section title spacing --- */
+      .section-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem !important;
+      }
+
+      /* --- Compact glass cards --- */
+      .glass-card,
+      .glass-card-static {
+        padding: 1rem !important;
+      }
+
+      /* --- Compact reveal margins --- */
+      .reveal.mb-12,
+      .reveal[class*="mb-12"] {
+        margin-bottom: 0.75rem !important;
+      }
+      .reveal.mb-8,
+      .reveal[class*="mb-8"] {
+        margin-bottom: 0.5rem !important;
+      }
+
+      /* --- Compact blog list --- */
+      #blog .space-y-4 > * {
+        margin-top: 0.5rem !important;
+      }
+      #blog .space-y-4 > *:first-child {
+        margin-top: 0 !important;
+      }
+
+      /* --- Compact skills grid --- */
+      #skills .grid {
+        gap: 0.5rem !important;
+      }
+
+      /* --- Compact carousel dots --- */
+      .carousel-dots {
+        margin-top: 0.5rem !important;
+      }
+
+      /* --- Compact experience sub-cards --- */
+      .exp-sub-card {
+        padding: 0.5rem 0.75rem !important;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+
+      /* --- Compact bottom banner --- */
+      #campus .py-8 {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
       }
 
       /* --- Hero orbs: scale down --- */
@@ -554,23 +613,18 @@
         transform: none !important;
       }
 
-      /* --- Carousel: tighter arrows, smaller cards --- */
+      /* --- Carousel: full-width cards matching other sections, auto height --- */
+      .carousel-card {
+        flex: 0 0 100% !important;
+        min-height: auto !important;
+        max-height: none !important;
+      }
       .carousel-arrow {
         width: 2rem;
         height: 2rem;
       }
       .carousel-arrow-left  { left: -2px; }
       .carousel-arrow-right { right: -2px; }
-      .carousel-card {
-        min-height: 340px;
-        max-height: 500px;
-      }
-
-      /* --- Exp sub-card: stack vertically on narrow screens --- */
-      .exp-sub-card {
-        flex-direction: column;
-        gap: 0.4rem;
-      }
 
       /* --- Skill tags: slightly more compact --- */
       .skill-tag {
@@ -578,20 +632,56 @@
         padding: 0.375rem 0.75rem;
       }
 
-      /* --- Section titles: smaller --- */
-      .section-title {
-        font-size: 1.35rem;
-      }
-
       /* --- Carousel skill text: smaller --- */
       .skill-carousel-text {
         font-size: 1.25rem !important;
       }
 
-      /* --- Scroll arrows: subtler --- */
+      /* --- Scroll arrows: hidden on mobile, let users swipe naturally --- */
       .scroll-arrow,
       .scroll-arrow-up {
-        opacity: 0.2 !important;
+        display: none !important;
+      }
+
+      /* --- Compact skill cards (~50% height), center content --- */
+      #skills .skill-card-clickable {
+        padding: 0.5rem !important;
+        text-align: center !important;
+      }
+      #skills .skill-card-clickable .w-10.h-10 {
+        width: 1.75rem !important;
+        height: 1.75rem !important;
+        margin-bottom: 0.375rem !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      #skills .skill-card-clickable .w-10.h-10 i {
+        width: 0.875rem !important;
+        height: 0.875rem !important;
+      }
+      #skills .skill-card-clickable h3 {
+        font-size: 0.8125rem !important;
+        margin-bottom: 0 !important;
+      }
+      #skills .skill-carousel {
+        min-height: auto !important;
+      }
+      #skills .skill-carousel-display {
+        min-height: 26px !important;
+      }
+      #skills .skill-carousel-text {
+        font-size: 0.875rem !important;
+      }
+      #skills .skill-carousel-dots {
+        margin-top: 3px !important;
+      }
+      #skills .skill-carousel-dot {
+        width: 4px !important;
+        height: 4px !important;
+      }
+      #skills .skill-carousel-dot.active {
+        width: 12px !important;
+        border-radius: 2px !important;
       }
     }
   </style>
@@ -858,6 +948,15 @@
             <div class="skill-carousel-dots"></div>
           </div>
         </div>
+        <!-- 产品技能详情卡片 -->
+        <div id="skillDetailCard" class="skill-detail-card md:col-span-3">
+          <div class="p-5 sm:p-6 rounded-[1.5rem] border" style="background:var(--skill-detail-bg);border-color:var(--skill-detail-border)">
+            <div class="flex items-center gap-3 text-base" style="color:var(--text-secondary)">
+              <i data-lucide="pen-tool" class="w-5 h-5 flex-shrink-0" style="color:#6366f1"></i>
+              <span>具备完整PRD产品需求文档撰写能力，熟练使用 Figma、Axure、Visio、XMind 等主流产品设计与流程梳理工具；熟练使用 Excel 数据透视表数据分析，掌握 MySQL 基础数据查询及 Tableau 可视化分析能力。</span>
+            </div>
+          </div>
+        </div>
 
         <!-- AI 能力 -->
         <div id="skillAICard" class="glass-card p-6 reveal skill-card-clickable">
@@ -870,6 +969,15 @@
               <span class="skill-carousel-text gradient-text">Claude Code</span>
             </div>
             <div class="skill-carousel-dots"></div>
+          </div>
+        </div>
+        <!-- AI能力详情卡片 -->
+        <div id="skillAIDetailCard" class="skill-detail-card md:col-span-3">
+          <div class="p-5 sm:p-6 rounded-[1.5rem] border" style="background:var(--skill-detail-bg);border-color:var(--skill-detail-border)">
+            <div class="flex items-center gap-3 text-base" style="color:var(--text-secondary)">
+              <i data-lucide="bot" class="w-5 h-5 flex-shrink-0" style="color:#8b5cf6"></i>
+              <span>重度使用 Claude Code、Codex 等 Vibe Coding 工具，并且有提示词工程、Skill 开发的实践经验。</span>
+            </div>
           </div>
         </div>
 
@@ -888,34 +996,13 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- 产品技能详情卡片 -->
-      <div id="skillDetailCard" class="skill-detail-card">
-        <div class="p-5 sm:p-6 rounded-[1.5rem] border" style="background:var(--skill-detail-bg);border-color:var(--skill-detail-border)">
-          <div class="flex items-center gap-3 text-base" style="color:var(--text-secondary)">
-            <i data-lucide="pen-tool" class="w-5 h-5 flex-shrink-0" style="color:#6366f1"></i>
-            <span>具备完整PRD产品需求文档撰写能力，熟练使用 Figma、Axure、Visio、XMind 等主流产品设计与流程梳理工具；熟练使用 Excel 数据透视表数据分析，掌握 MySQL 基础数据查询及 Tableau 可视化分析能力。</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- AI能力详情卡片 -->
-      <div id="skillAIDetailCard" class="skill-detail-card">
-        <div class="p-5 sm:p-6 rounded-[1.5rem] border" style="background:var(--skill-detail-bg);border-color:var(--skill-detail-border)">
-          <div class="flex items-center gap-3 text-base" style="color:var(--text-secondary)">
-            <i data-lucide="bot" class="w-5 h-5 flex-shrink-0" style="color:#8b5cf6"></i>
-            <span>重度使用 Claude Code、Codex 等 Vibe Coding 工具，并且有提示词工程、Skill 开发的实践经验。</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 英语能力详情卡片 -->
-      <div id="skillEnglishDetailCard" class="skill-detail-card">
-        <div class="p-5 sm:p-6 rounded-[1.5rem] border" style="background:var(--skill-detail-bg);border-color:var(--skill-detail-border)">
-          <div class="flex items-center gap-3 text-base" style="color:var(--text-secondary)">
-            <i data-lucide="globe" class="w-5 h-5 flex-shrink-0" style="color:#06b6d4"></i>
-            <span>雅思6.5，具备良好的英文读写与沟通能力，能胜任海外产品工作。</span>
+        <!-- 英语能力详情卡片 -->
+        <div id="skillEnglishDetailCard" class="skill-detail-card md:col-span-3">
+          <div class="p-5 sm:p-6 rounded-[1.5rem] border" style="background:var(--skill-detail-bg);border-color:var(--skill-detail-border)">
+            <div class="flex items-center gap-3 text-base" style="color:var(--text-secondary)">
+              <i data-lucide="globe" class="w-5 h-5 flex-shrink-0" style="color:#06b6d4"></i>
+              <span>雅思6.5，具备良好的英文读写与沟通能力，能胜任海外产品工作。</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1370,8 +1457,8 @@
               </div>
               <p class="text-sm font-medium mb-3" style="color:var(--text-secondary)">学生助理</p>
               <ul class="space-y-2 text-sm" style="color:var(--text-secondary)">
-                <li class="flex gap-2"><span class="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style="background:#6366f1"></span><strong>市场信息科工作：</strong>发布、管理、维护企业提供的就业信息；协助举办毕业典礼暨学位授予仪式</li>
-                <li class="flex gap-2"><span class="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style="background:#6366f1"></span><strong>企业入校对接：</strong>独立对接 40 余家企业入校开展宣讲、面试活动，为学生和企业之间搭建沟通渠道</li>
+                <li class="flex gap-2"><span class="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style="background:#6366f1"></span><span><strong>市场信息科工作：</strong>发布、管理、维护企业提供的就业信息；协助举办毕业典礼暨学位授予仪式</span></li>
+                <li class="flex gap-2"><span class="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style="background:#6366f1"></span><span><strong>企业入校对接：</strong>独立对接 40 余家企业入校开展宣讲、面试活动，为学生和企业之间搭建沟通渠道</span></li>
               </ul>
             </div>
           </div>
