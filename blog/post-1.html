@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="为什么「简洁」是 B 端产品的第一原则？ — 蒋天祺的产品思考">
+  <title>为什么「简洁」是 B 端产品的第一原则？ — 蒋天祺</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans SC"', '"Inter"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe',
+              300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1',
+              600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    .prose h2 { font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-top: 2rem; margin-bottom: 0.75rem; }
+    .dark .prose h2 { color: #f1f5f9; }
+    .prose h3 { font-size: 1.15rem; font-weight: 600; color: #334155; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .dark .prose h3 { color: #cbd5e1; }
+    .prose p { margin-bottom: 1rem; line-height: 1.85; color: #475569; }
+    .dark .prose p { color: #94a3b8; }
+    .prose ul { list-style-type: disc; padding-left: 1.25rem; margin-bottom: 1rem; }
+    .prose ul li { margin-bottom: 0.5rem; line-height: 1.85; color: #475569; }
+    .dark .prose ul li { color: #94a3b8; }
+    .prose blockquote {
+      border-left: 3px solid #6366f1; padding-left: 1rem; margin: 1.5rem 0;
+      color: #64748b; font-style: italic;
+    }
+    .dark .prose blockquote { border-left-color: #818cf8; color: #94a3b8; }
+    .prose strong { color: #0f172a; font-weight: 600; }
+    .dark .prose strong { color: #e2e8f0; }
+  </style>
+</head>
+<body class="bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 font-sans transition-colors duration-300">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="../index.html" class="text-lg font-bold text-slate-900 dark:text-white tracking-tight">
+        蒋天祺<span class="text-brand-500">.</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="../index.html#blog" class="text-sm text-slate-500 hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400 transition-colors">
+          <i data-lucide="arrow-left" class="w-4 h-4 inline mr-1"></i>产品思考
+        </a>
+        <button id="themeToggle" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="切换深色模式">
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-slate-400"></i>
+          <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-slate-500"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Article -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+    <!-- Header -->
+    <header class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-2.5 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 rounded-md text-xs font-medium">产品设计</span>
+        <span class="text-sm text-slate-400">2025.12.15</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white leading-tight mb-4">
+        为什么「简洁」是 B 端产品的第一原则？
+      </h1>
+      <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
+        从一次客户演示失败的复盘出发，聊聊 B 端产品为什么容易变得复杂，以及如何用「减法思维」做产品决策。
+      </p>
+    </header>
+
+    <!-- Content -->
+    <div class="prose text-base">
+      <p>几个月前，我参与了一次 SaaS 产品的客户演示。销售同事在台上展示了 20 分钟，把 50 多个功能逐个介绍了一遍。台下的客户代表面无表情。演示结束后，客户说了一句话：<strong>「你们的功能确实很多，但我们团队只有 5 个人，我只想知道能不能帮我解决排班问题。」</strong></p>
+
+      <p>那一刻我意识到：我们习惯性地用「功能多」来证明产品价值，却忘了客户真正关心的从来不是功能数量，而是<strong>能否用最低的认知成本解决他的问题</strong>。</p>
+
+      <h2>一、B 端产品为什么容易「变重」？</h2>
+
+      <p>B 端产品和 C 端产品有一个根本性的区别：<strong>买单的人和用的人往往不是同一批人</strong>。老板关注 ROI，一线员工关注好不好用。为了签下客户，销售会不断要求加功能——「竞品有这个我们没有」「客户说没有 XX 功能不签」。产品经理如果来者不拒，产品就会变成一个臃肿的瑞士军刀：什么都能做，什么都做不好。</p>
+
+      <p>还有几个常见的「增重」驱动力：</p>
+
+      <ul>
+        <li><strong>大客户定制需求</strong>：一个头部客户要求的功能，可能只适用于他一家，但为了合同金额，不得不做。</li>
+        <li><strong>内部团队博弈</strong>：设计团队想做「体验标杆」，研发想做「技术挑战」，结果产品承载了太多非用户价值的东西。</li>
+        <li><strong>缺乏「做减法」的决策机制</strong>：加功能容易（没人会因为提需求被追责），砍功能难（砍掉了出问题谁来担？）。</li>
+      </ul>
+
+      <h2>二、简洁 ≠ 简陋</h2>
+
+      <p>这里需要澄清一个常见的误解：<strong>简洁不是功能少，而是认知负担小</strong>。</p>
+
+      <p>举两个例子：</p>
+      <ul>
+        <li><strong>Salesforce</strong>：功能极多，但通过模块化设计让每个角色的用户只看到自己需要的部分。对单个用户来说，它很简洁。</li>
+        <li><strong>Notion</strong>：底层能力非常强大（数据库、公式、自动化），但新用户打开就是一个空白页面，可以像写文档一样开始用。这就是「渐进式披露」。</li>
+      </ul>
+
+      <p>好的 B 端产品设计，是把复杂性封装起来，把简洁暴露给用户。</p>
+
+      <h2>三、我在项目中实践「减法」的三个原则</h2>
+
+      <h3>原则 1：用「不做」来定义产品</h3>
+      <p>在校园社团管理 SaaS 项目中，我们收到了很多需求：财务报销、场地申请、活动签到、成员考核……但 MVP 阶段，我明确把范围收敛到<strong>「活动管理 + 成员管理」</strong>两个模块。判断标准很简单：<strong>没有这两个功能，社团就不能正常运转吗？</strong>如果不是，就放进 V2 需求池。</p>
+
+      <h3>原则 2：从「用户任务」出发，而非「功能列表」出发</h3>
+      <p>做运营数据看板时，我们的初始方案是一个可自由配置的仪表盘。但调研后发现，运营同学每周五下午都要做同一件事：<strong>把 5 个系统的数据拉出来，拼成一张周报表</strong>。于是我们把 V1 做成了「一键生成周报」，而非「通用 BI 工具」。上线第一周就有 12 个运营同学自发使用。</p>
+
+      <h3>原则 3：定期做「功能体检」</h3>
+      <p>每个功能上线后，我会在 30 天后回看数据：使用率、完成率、是否产生了预期的行为改变。如果一个功能连续 2 次体检都不达标，就进入「待砍」清单。产品经理的勇气不只是「敢做」，更是<strong>「敢砍」</strong>。</p>
+
+      <h2>四、总结</h2>
+
+      <p>回到标题——为什么「简洁」是 B 端产品第一原则？</p>
+
+      <blockquote>
+        <p>因为 B 端用户是被迫使用你的产品的。他们没有探索的耐心，不会觉得「功能多」是赚到了。他们只想快点完成手头的任务，然后下班。</p>
+      </blockquote>
+
+      <p>尊重用户的注意力，就是最好的用户体验。</p>
+    </div>
+
+    <!-- Back -->
+    <div class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-700">
+      <a href="../index.html#blog" class="inline-flex items-center gap-2 text-brand-600 dark:text-brand-400 font-medium hover:gap-3 transition-all">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> 回到产品思考
+      </a>
+    </div>
+  </article>
+
+  <script>
+    const THEME_KEY = 'theme';
+    function getTheme() {
+      const stored = localStorage.getItem(THEME_KEY);
+      if (stored) return stored;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function setTheme(theme) {
+      if (theme === 'dark') document.documentElement.classList.add('dark');
+      else document.documentElement.classList.remove('dark');
+      localStorage.setItem(THEME_KEY, theme);
+    }
+    setTheme(getTheme());
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+      setTheme(next);
+      lucide.createIcons();
+    });
+    lucide.createIcons();
+  </script>
+</body>
+</html>

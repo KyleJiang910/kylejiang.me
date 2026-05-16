@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="学会问「愚蠢的问题」：我的用户访谈方法论 — 蒋天祺的产品思考">
+  <title>学会问「愚蠢的问题」：我的用户访谈方法论 — 蒋天祺</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans SC"', '"Inter"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe',
+              300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1',
+              600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    .prose h2 { font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-top: 2rem; margin-bottom: 0.75rem; }
+    .dark .prose h2 { color: #f1f5f9; }
+    .prose h3 { font-size: 1.15rem; font-weight: 600; color: #334155; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .dark .prose h3 { color: #cbd5e1; }
+    .prose p { margin-bottom: 1rem; line-height: 1.85; color: #475569; }
+    .dark .prose p { color: #94a3b8; }
+    .prose ul { list-style-type: disc; padding-left: 1.25rem; margin-bottom: 1rem; }
+    .prose ul li { margin-bottom: 0.5rem; line-height: 1.85; color: #475569; }
+    .dark .prose ul li { color: #94a3b8; }
+    .prose blockquote {
+      border-left: 3px solid #6366f1; padding-left: 1rem; margin: 1.5rem 0;
+      color: #64748b; font-style: italic;
+    }
+    .dark .prose blockquote { border-left-color: #818cf8; color: #94a3b8; }
+    .prose strong { color: #0f172a; font-weight: 600; }
+    .dark .prose strong { color: #e2e8f0; }
+  </style>
+</head>
+<body class="bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 font-sans transition-colors duration-300">
+
+  <nav class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="../index.html" class="text-lg font-bold text-slate-900 dark:text-white tracking-tight">
+        蒋天祺<span class="text-brand-500">.</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="../index.html#blog" class="text-sm text-slate-500 hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400 transition-colors">
+          <i data-lucide="arrow-left" class="w-4 h-4 inline mr-1"></i>产品思考
+        </a>
+        <button id="themeToggle" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="切换深色模式">
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-slate-400"></i>
+          <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-slate-500"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+    <header class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-2.5 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-md text-xs font-medium">用户研究</span>
+        <span class="text-sm text-slate-400">2025.10.28</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white leading-tight mb-4">
+        学会问「愚蠢的问题」：我的用户访谈方法论
+      </h1>
+      <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
+        大多数用户访谈的问题在于提问者太聪明。总结我踩过的坑和提炼的访谈框架。
+      </p>
+    </header>
+
+    <div class="prose text-base">
+      <p>大二那年第一次做用户访谈，我提前准备了一份「专业」的访谈提纲。12 个精心设计的问题，涵盖场景、痛点、偏好、竞品。访谈了 5 个用户，整理了上万字的逐字稿，信心满满地去跟学长汇报。</p>
+
+      <p>学长看完只问了我一句话：<strong>「所以用户到底想要什么？」</strong></p>
+
+      <p>我愣住了。我有一堆数据，但没有答案。</p>
+
+      <p>后来的两年里，我做了超过 50 场用户访谈（从陌生人到深度用户，从学生到企业高管），踩过无数坑，总结了一套自己的方法论。核心就是一个悖论：<strong>好的访谈者，必须学会问「愚蠢的问题」。</strong></p>
+
+      <h2>一、什么是我说的「愚蠢的问题」？</h2>
+
+      <p>「愚蠢的问题」不是真的蠢，而是<strong>不预设答案、看似基础、却能打开对话窗口的问题</strong>。它们的特征是：</p>
+
+      <ul>
+        <li>提问者暴露自己的「无知」——「我对这个领域不熟悉，能帮我理解一下吗？」</li>
+        <li>不试图显得聪明——「你刚刚说的 XX 是什么意思？能举个例子吗？」</li>
+        <li>追问最基础的「为什么」——「你说你不喜欢这个功能，能具体说说哪一次使用体验让你决定放弃吗？」</li>
+      </ul>
+
+      <p>与之对应的是「聪明的问题」：</p>
+      <ul>
+        <li>「你觉得这个功能如果用 AI 来驱动会不会更好？」——你在展示自己的判断，而不是了解用户。</li>
+        <li>「你是不是觉得这个流程太复杂了？」——你已经在替用户下结论了。</li>
+        <li>「如果有一个工具可以帮你自动做 XX，你会用吗？」——这是推销，不是访谈。</li>
+      </ul>
+
+      <h2>二、我踩过的三个大坑</h2>
+
+      <h3>坑 1：把访谈做成了问卷</h3>
+      <p>第一次访谈时，我严格按照提纲一个问题一个问题地问，生怕遗漏。结果就是用户也被我带成了「答题模式」：回答得越来越短，越来越标准化。真正的洞察往往产生在<strong>用户跑题的时候</strong>——他开始讲一个让你意外的故事，这才是金矿。</p>
+
+      <h3>坑 2：过早进入「方案模式」</h3>
+      <p>用户说「我觉得这里不太好」，我立刻追问「那如果改成 XX 你觉得怎么样？」。这是产品经理的本能，但<strong>过早跳入方案层会让你失去了解「真正的为什么」的机会</strong>。用户说不好用，可能有 5 个原因：找不到入口、操作步骤太多、不理解术语、加载太慢、他真的不需要这个功能。如果你直接跳到方案，就永远不知道是哪个。</p>
+
+      <h3>坑 3：只问「做什么」，不问「为什么停」</h3>
+      <p>我们通常倾向于问用户「你是怎么用这个功能的」，但很少问「你什么时候决定不用的？那个放弃的瞬间发生了什么？」<strong>流失的瞬间比使用的瞬间包含更多信息。</strong></p>
+
+      <h2>三、我的访谈框架：LISTEN</h2>
+
+      <p>后来我提炼了一个框架，帮助自己在访谈中保持「愚蠢」：</p>
+
+      <ul>
+        <li><strong>L — Lead with silence</strong>（用沉默开场）：用户说完一句话后，等 3 秒再开口。80% 的受访者会在这 3 秒里补充更真实的信息。</li>
+        <li><strong>I — Invite stories</strong>（邀请故事而非观点）：「能讲讲上一次你做 XX 的经历吗？」比「你觉得 XX 怎么样？」有用 10 倍。</li>
+        <li><strong>S — Stay on the surface</strong>（先表面后深入）：前 15 分钟只问发生了什么，不追问为什么。让用户先放松地叙述。</li>
+        <li><strong>T — Then ask why</strong>（再问为什么）：15 分钟后再开始追问因果关系。「你刚才说到你放弃了那个功能——能帮我理解一下那一刻你是怎么想的？」</li>
+        <li><strong>E — Echo back</strong>（复述确认）：「我确认一下我理解得对不对——你说的是 XX 场景下，YY 让你觉得 ZZ？」</li>
+        <li><strong>N — Notice the unsaid</strong>（观察没说出口的）：用户犹豫的停顿、突然提高的语调、含糊带过的地方——这些往往比说出口的话更重要。</li>
+      </ul>
+
+      <h2>四、一个具体案例</h2>
+
+      <p>在做校园二手交易平台时，早期访谈中用户普遍说「希望有信用体系」。如果我只是记下这个需求，可能就会去做一个芝麻信用式的评分系统。</p>
+
+      <p>但我追问了一个愚蠢的问题：<strong>「能回忆一下最近一次你在二手交易中不愉快的经历吗？」</strong></p>
+
+      <p>用户讲了一个故事：她在学校群里买了一本书，约定教学楼见面交易。结果对方迟到了 40 分钟，理由是「刚下课」。她生气的不是对方不诚信，而是<strong>没有有效的方式确认对方是否会准时出现</strong>。这不只是一个「信用」问题，而是一个「履约确定性」问题。</p>
+
+      <p>这直接改变了产品方向：我们最后没有做复杂的评分体系，而是在 MVP 中做了<strong>「预约交易时间 + 交易前 10 分钟双向提醒」</strong>。一个简单的功能解决了最核心的信任锚点。</p>
+
+      <h2>五、写在最后</h2>
+
+      <blockquote>
+        <p>产品经理最大的敌人不是竞品，而是自己的「我知道」。</p>
+      </blockquote>
+
+      <p>知道得越多，问得就越少；问得越少，知道得就越少。这是一个恶性循环。保持「愚蠢」，本质上就是保持对用户真实世界持续的好奇心。这不是技巧，而是心态。</p>
+
+      <p>下次做用户访谈时，试着说一句：「这个我不太懂，你能多说说吗？」你可能会听到一个完全不同的故事。</p>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-700">
+      <a href="../index.html#blog" class="inline-flex items-center gap-2 text-brand-600 dark:text-brand-400 font-medium hover:gap-3 transition-all">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> 回到产品思考
+      </a>
+    </div>
+  </article>
+
+  <script>
+    const THEME_KEY = 'theme';
+    function getTheme() {
+      const stored = localStorage.getItem(THEME_KEY);
+      if (stored) return stored;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function setTheme(theme) {
+      if (theme === 'dark') document.documentElement.classList.add('dark');
+      else document.documentElement.classList.remove('dark');
+      localStorage.setItem(THEME_KEY, theme);
+    }
+    setTheme(getTheme());
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+      setTheme(next);
+      lucide.createIcons();
+    });
+    lucide.createIcons();
+  </script>
+</body>
+</html>

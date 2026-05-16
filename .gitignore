@@ -1,0 +1,17 @@
+# System
+.DS_Store
+Thumbs.db
+~$*
+
+# IDE
+.vscode/
+.idea/
+
+# Project
+node_modules/
+.claude/
+
+# Personal documents (不要上传个人信息文件)
+*.docx
+*.pdf
+个人照.jpg

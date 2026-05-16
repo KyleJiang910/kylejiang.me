@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="蒋天祺 — 产品经理实习生 | 个人简历与项目作品集">
+  <title>蒋天祺 | 产品经理</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans SC"', '"Inter"', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* ========== CSS CUSTOM PROPERTIES ========== */
+    :root {
+      --glass-bg: rgba(255,255,255,0.62);
+      --glass-bg-strong: rgba(255,255,255,0.82);
+      --glass-bg-subtle: rgba(255,255,255,0.40);
+      --glass-border: rgba(255,255,255,0.55);
+      --glass-shadow: 0 4px 24px rgba(100,116,255,0.08), 0 1px 4px rgba(0,0,0,0.04);
+      --glass-shadow-hover: 0 8px 40px rgba(100,116,255,0.14), 0 2px 8px rgba(0,0,0,0.06);
+      --glow-blue: rgba(99,130,255,0.18);
+      --glow-purple: rgba(168,85,247,0.14);
+      --glow-cyan: rgba(6,182,212,0.12);
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-tertiary: #94a3b8;
+      --bg-page: #f4f6fc;
+      --bg-page-alt: #eef1f9;
+      --divider-color: rgba(0,0,0,0.1);
+      --skill-detail-bg: rgba(99,102,241,0.06);
+      --skill-detail-border: rgba(99,102,241,0.15);
+      --gradient-hero: linear-gradient(135deg, #6366f1 0%, #8b5cf6 35%, #06b6d4 100%);
+      --gradient-card-1: linear-gradient(135deg, rgba(99,102,241,0.06) 0%, rgba(139,92,246,0.04) 100%);
+      --gradient-card-2: linear-gradient(135deg, rgba(6,182,212,0.05) 0%, rgba(99,102,241,0.04) 100%);
+    }
+
+    .dark {
+      --glass-bg: rgba(15,23,42,0.58);
+      --glass-bg-strong: rgba(15,23,42,0.78);
+      --glass-bg-subtle: rgba(15,23,42,0.35);
+      --glass-border: rgba(255,255,255,0.08);
+      --glass-shadow: 0 4px 24px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2);
+      --glass-shadow-hover: 0 8px 40px rgba(99,130,255,0.12), 0 2px 8px rgba(0,0,0,0.4);
+      --glow-blue: rgba(99,130,255,0.12);
+      --glow-purple: rgba(168,85,247,0.09);
+      --glow-cyan: rgba(6,182,212,0.08);
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-tertiary: #64748b;
+      --bg-page: #020617;
+      --bg-page-alt: #0a0f1e;
+      --divider-color: rgba(255,255,255,0.08);
+      --skill-detail-bg: rgba(6,182,212,0.12);
+      --skill-detail-border: rgba(6,182,212,0.22);
+      --gradient-card-1: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(139,92,246,0.05) 100%);
+      --gradient-card-2: linear-gradient(135deg, rgba(6,182,212,0.06) 0%, rgba(99,102,241,0.05) 100%);
+    }
+
+    /* ========== GLOBAL ========== */
+    html {
+      scroll-padding-top: 5rem;
+    }
+
+    body {
+      background: var(--bg-page);
+      color: var(--text-primary);
+      font-family: 'Noto Sans SC', 'Inter', system-ui, sans-serif;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ========== NAV LINK ========== */
+    .nav-link { color: #1e293b; }
+    .dark .nav-link { color: #94a3b8; }
+
+    /* ========== SCROLL-DOWN ARROW ========== */
+    @keyframes arrow-bounce {
+      0%, 100% { opacity: 0.35; transform: translateX(-50%) translateY(0) scale(1); }
+      50% { opacity: 0.7; transform: translateX(-50%) translateY(4px) scale(1); }
+    }
+    @keyframes arrow-bounce-up {
+      0%, 100% { opacity: 0.35; transform: translateX(-50%) translateY(0) scale(1); }
+      50% { opacity: 0.7; transform: translateX(-50%) translateY(-4px) scale(1); }
+    }
+    .scroll-arrow-up {
+      animation: arrow-bounce-up 2.2s ease-in-out infinite;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+    .scroll-arrow-up:hover {
+      opacity: 1 !important;
+      animation: none;
+      transform: translateX(-50%) scale(1.2);
+    }
+
+    .scroll-arrow {
+      animation: arrow-bounce 2.2s ease-in-out infinite;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+    .scroll-arrow:hover {
+      opacity: 1 !important;
+      animation: none;
+      transform: translateX(-50%) scale(1.2);
+    }
+
+    /* ========== EMAIL ICON ========== */
+    .email-icon {
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    .email-icon:hover { color: var(--accent) !important; }
+
+    .email-tooltip {
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 3px);
+      transform: translateY(calc(-50% - 1.5px));
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: auto;
+      transition: opacity 0.2s ease;
+      background: var(--glass-bg-strong);
+      border: 1px solid var(--glass-border);
+      color: var(--text-primary);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .email-tooltip.show { opacity: 1; }
+
+    /* ========== GLASS CARD ========== */
+    .glass-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 1.5rem;
+      box-shadow: var(--glass-shadow);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+    }
+    .glass-card:hover {
+      box-shadow: var(--glass-shadow-hover);
+      transform: translateY(-2px);
+    }
+    .glass-card-static {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 1.5rem;
+      box-shadow: var(--glass-shadow);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    /* Stronger glass (nav, hero badges) */
+    .glass-strong {
+      background: var(--glass-bg-strong);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+    }
+
+    /* Subtle glass (sub-cards) */
+    .glass-subtle {
+      background: var(--glass-bg-subtle);
+      border: 1px solid var(--glass-border);
+      border-radius: 1rem;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+    }
+    .glass-subtle:hover {
+      background: var(--glass-bg);
+      box-shadow: var(--glass-shadow);
+    }
+
+    /* ========== GRADIENT TEXT ========== */
+    .gradient-text {
+      background: var(--gradient-hero);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ========== GLOW BADGE ========== */
+    .glow-badge {
+      background: var(--glass-bg-strong);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 9999px;
+      box-shadow: 0 0 20px var(--glow-blue), 0 0 40px var(--glow-purple);
+    }
+
+    /* ========== HERO FLOATING ORBS ========== */
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.5;
+      pointer-events: none;
+      animation: orb-float 8s ease-in-out infinite;
+    }
+    .hero-orb:nth-child(1) { background: #818cf8; width: 300px; height: 300px; top: -80px; right: -60px; animation-delay: 0s; }
+    .hero-orb:nth-child(2) { background: #a78bfa; width: 200px; height: 200px; top: 40%; right: 20%; animation-delay: -3s; }
+    .hero-orb:nth-child(3) { background: #22d3ee; width: 180px; height: 180px; bottom: -40px; left: -40px; animation-delay: -5s; }
+
+    @keyframes orb-float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(15px, -20px) scale(1.05); }
+      66% { transform: translate(-10px, 10px) scale(0.95); }
+    }
+
+    /* ========== SECTION TITLE ========== */
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    @media (min-width: 640px) {
+      .section-title { font-size: 2rem; }
+    }
+
+    /* ========== EXPERIENCE SUB-CARD ========== */
+    .exp-sub-card {
+      background: var(--glass-bg-subtle);
+      border: 1px solid var(--glass-border);
+      border-radius: 1rem;
+      padding: 0.75rem 1rem;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+      cursor: default;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 0.25rem 1rem;
+    }
+    .exp-sub-card:hover {
+      background: var(--glass-bg);
+      box-shadow: var(--glass-shadow);
+      transform: translateY(-1px);
+    }
+
+    /* ========== SKILL TAG ========== */
+    .skill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.5rem 1rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 9999px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: all 0.25s ease;
+    }
+    .skill-tag:hover {
+      box-shadow: 0 0 16px var(--glow-blue);
+      border-color: rgba(99,130,255,0.4);
+    }
+
+    /* ========== SKILL CAROUSEL ========== */
+    .skill-carousel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100px;
+    }
+
+    .skill-carousel-display {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+    }
+
+    .skill-carousel-text {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      text-align: center;
+      transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    @media (min-width: 640px) {
+      .skill-carousel-text { font-size: 1.75rem; }
+    }
+
+    .skill-carousel-text.fade-out {
+      opacity: 0;
+      transform: translateY(-10px) scale(0.94);
+    }
+
+    .skill-carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .skill-carousel-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      border: none;
+      padding: 0;
+      transition: all 0.35s ease;
+      background: var(--glass-border);
+    }
+    .skill-carousel-dot.active {
+      background: #6366f1;
+      box-shadow: 0 0 8px var(--glow-blue);
+      width: 18px;
+      border-radius: 3px;
+    }
+
+    /* ========== SKILL DETAIL EXPAND ========== */
+    .skill-detail-card {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin 0.5s ease;
+      opacity: 0;
+      margin-top: 0;
+    }
+    .skill-detail-card.expanded {
+      max-height: 300px;
+      opacity: 1;
+      margin-top: 1.5rem;
+    }
+
+    .skill-card-clickable {
+      cursor: pointer;
+      position: relative;
+    }
+    .skill-card-clickable::after {
+      content: '点击查看详情';
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0.75rem;
+      font-size: 0.6875rem;
+      color: var(--text-tertiary);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .skill-card-clickable:hover::after {
+      opacity: 1;
+    }
+
+    /* ========== TIMELINE DOT ========== */
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 0 12px var(--glow-blue);
+    }
+
+    /* ========== SCROLL ANIMATION INITIAL ========== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ========== DIVIDER ========== */
+    .glass-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--divider-color), transparent);
+    }
+
+    /* ========== CAROUSEL ========== */
+    .carousel-container {
+      position: relative;
+    }
+
+    .carousel-viewport {
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 1rem;
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+      align-items: stretch;
+      will-change: transform;
+    }
+
+    .carousel-card {
+      flex: 0 0 88%;
+      min-height: 420px;
+      max-height: 600px;
+      opacity: 0.28;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+      user-select: none;
+    }
+    @media (min-width: 640px) {
+      .carousel-card {
+        flex: 0 0 88%;
+        min-height: 460px;
+        max-height: 620px;
+      }
+    }
+    @media (min-width: 1024px) {
+      .carousel-card {
+        flex: 0 0 88%;
+      }
+    }
+
+    .carousel-card.active {
+      opacity: 1;
+      pointer-events: auto;
+      user-select: auto;
+    }
+
+    @keyframes arrow-pulse {
+      0%, 100% { transform: translateY(-50%) scale(1); box-shadow: 0 0 8px rgba(99,102,241,0.15), 0 0 20px rgba(99,102,241,0.05); }
+      50% { transform: translateY(-50%) scale(1.08); box-shadow: 0 0 16px rgba(99,102,241,0.3), 0 0 36px rgba(99,102,241,0.12); }
+    }
+
+    /* Navigation Arrows */
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 50%;
+      border: 1.5px solid rgba(99,102,241,0.35);
+      background: var(--glass-bg-strong);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      color: #6366f1;
+      animation: arrow-pulse 2.4s ease-in-out infinite;
+    }
+    .carousel-arrow:hover {
+      box-shadow: 0 0 24px rgba(99,102,241,0.4), 0 0 48px rgba(99,102,241,0.15);
+      border-color: rgba(99,102,241,0.6);
+      color: #4f46e5;
+      animation: none;
+      transform: translateY(-50%) scale(1.15);
+    }
+    @media (min-width: 640px) {
+      .carousel-arrow {
+        width: 2.75rem;
+        height: 2.75rem;
+      }
+    }
+
+    .carousel-arrow-left  { left: 0; }
+    .carousel-arrow-right { right: 0; }
+
+    /* Dot Indicators */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.3s ease;
+      background: var(--glass-border);
+    }
+    .carousel-dot.active {
+      background: #6366f1;
+      box-shadow: 0 0 10px var(--glow-blue);
+      width: 24px;
+      border-radius: 4px;
+    }
+    .carousel-dot:hover:not(.active) {
+      background: rgba(99,102,241,0.4);
+    }
+
+    /* ========== SCROLLBAR ========== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(148,163,184,0.3); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(148,163,184,0.5); }
+  </style>
+</head>
+<body class="text-slate-700 dark:text-slate-300">
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-400 glass-strong border-b border-transparent">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-2">
+          <a href="#hero" class="text-lg font-extrabold tracking-tight" style="color:var(--text-primary)">
+            kylejiang<span class="gradient-text">.me</span>
+          </a>
+          <span class="relative inline-flex translate-y-[2.5px] translate-x-[1px]">
+            <button id="emailIcon" class="email-icon w-4 h-4 p-0 border-0 bg-transparent cursor-pointer" style="color:var(--text-secondary)" title="点击查看邮箱">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+            </button>
+            <span id="emailTooltip" class="email-tooltip">jiangtianqi910@163.com</span>
+          </span>
+        </div>
+
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#education" class="nav-link text-sm font-medium transition-colors">教育背景</a>
+          <a href="#skills" class="nav-link text-sm font-medium transition-colors">工作技能</a>
+          <a href="#experience" class="nav-link text-sm font-medium transition-colors">实习&创业</a>
+          <a href="#blog" class="nav-link text-sm font-medium transition-colors">产品思考</a>
+          <a href="#projects" class="nav-link text-sm font-medium transition-colors">科研项目</a>
+          <a href="#campus" class="nav-link text-sm font-medium transition-colors">校园经历</a>
+          <button id="themeToggle" class="p-2 rounded-xl hover:bg-white/10 transition-colors" aria-label="切换深色模式">
+            <i data-lucide="sun" class="w-4 h-4 hidden dark:block" style="color:var(--text-tertiary)"></i>
+            <i data-lucide="moon" class="w-4 h-4 block dark:hidden" style="color:var(--text-tertiary)"></i>
+          </button>
+        </div>
+
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-xl hover:bg-white/10 transition-colors" aria-label="菜单">
+          <i data-lucide="menu" class="w-5 h-5" style="color:var(--text-secondary)"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="hidden md:hidden border-t" style="background:var(--glass-bg-strong);border-color:var(--glass-border)">
+      <div class="px-4 py-3 space-y-1">
+        <a href="#education" class="block px-3 py-2.5 rounded-xl text-sm font-medium mobile-nav-link" style="color:var(--text-secondary)">教育背景</a>
+        <a href="#skills" class="block px-3 py-2.5 rounded-xl text-sm font-medium mobile-nav-link" style="color:var(--text-secondary)">工作技能</a>
+        <a href="#experience" class="block px-3 py-2.5 rounded-xl text-sm font-medium mobile-nav-link" style="color:var(--text-secondary)">实习&创业</a>
+        <a href="#blog" class="block px-3 py-2.5 rounded-xl text-sm font-medium mobile-nav-link" style="color:var(--text-secondary)">产品思考</a>
+        <a href="#projects" class="block px-3 py-2.5 rounded-xl text-sm font-medium mobile-nav-link" style="color:var(--text-secondary)">科研项目</a>
+        <a href="#campus" class="block px-3 py-2.5 rounded-xl text-sm font-medium mobile-nav-link" style="color:var(--text-secondary)">校园经历</a>
+        <button id="themeToggleMobile" class="w-full text-left px-3 py-2.5 rounded-xl text-sm font-medium" style="color:var(--text-secondary)">
+          切换深色模式
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ==================== HERO ==================== -->
+  <section id="hero" class="min-h-screen flex items-center relative overflow-hidden">
+    <!-- Floating orbs -->
+    <div class="hero-orb"></div>
+    <div class="hero-orb"></div>
+    <div class="hero-orb"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+      <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+        <!-- Left: Text -->
+        <div class="flex-1 text-center md:text-left">
+          <!-- Status badge -->
+          <div class="inline-flex glow-badge items-center gap-2 px-4 py-1.5 text-base font-medium mb-8">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style="background:#818cf8"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2" style="background:#6366f1"></span>
+            </span>
+            <span style="color:var(--text-secondary)">产品实习生 · 可尽快到岗 · 3个月（5天/周）</span>
+          </div>
+
+          <p class="text-2xl sm:text-3xl font-medium mb-1" style="color:var(--text-primary)">你好，我是</p>
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-4 md:w-fit" style="color:var(--text-primary)">
+            <span class="gradient-text">蒋天祺</span>&nbsp;<span style="color:var(--text-primary)">Kyle</span>
+          </h1>
+
+          <div class="flex flex-wrap gap-2 justify-center md:justify-start mb-6 md:w-fit">
+            <span class="skill-tag text-sm font-semibold" style="background:rgba(99,102,241,0.1);border-color:rgba(99,102,241,0.2);color:#6366f1">27届</span>
+            <span class="skill-tag text-sm font-semibold" style="background:rgba(99,102,241,0.1);border-color:rgba(99,102,241,0.2);color:#6366f1">华南理工大学（985）本硕</span>
+            <span class="skill-tag text-sm font-semibold" style="background:rgba(99,102,241,0.1);border-color:rgba(99,102,241,0.2);color:#6366f1">工科×计算机背景</span>
+            <span class="skill-tag text-sm font-semibold" style="background:rgba(99,102,241,0.1);border-color:rgba(99,102,241,0.2);color:#6366f1">ESTJ</span>
+          </div>
+
+          <div class="text-lg max-w-lg mx-auto md:mx-0 mb-8 leading-relaxed" style="color:var(--text-secondary)">
+            <p class="mb-1">三段产品实习横跨 ToC、ToB、ToG 赛道；</p>
+            <p class="mb-1">逻辑思维缜密，擅长拆解难点，兼具极强自驱力与高效执行力；</p>
+            <p>善用 AI 高效赋能工作，具备极强责任心与 owner 意识。</p>
+          </div>
+
+          <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+            <a href="#experience" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/30 text-white" style="background:var(--gradient-hero);box-shadow:0 4px 24px rgba(99,102,241,0.3)">
+              <i data-lucide="briefcase" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5"></i>
+              点击查看实习经历
+            </a>
+            <a href="#blog" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm glass-card-static transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/20" style="color:var(--text-secondary)">
+              <i data-lucide="pen-line" class="w-4 h-4"></i>
+              点击查看产品思考
+            </a>
+          </div>
+
+          <p class="mt-6 text-xs" style="color:var(--text-tertiary)">Built with Claude Code × DeepSeek V4</p>
+        </div>
+
+        <!-- Right: Avatar -->
+        <div class="flex-shrink-0">
+          <div class="w-56 sm:w-72 aspect-[9/16] rounded-[2rem] p-1 relative" style="background:var(--gradient-hero);box-shadow:0 0 60px var(--glow-blue),0 0 100px var(--glow-purple)">
+            <div class="w-full h-full rounded-[1.75rem] overflow-hidden" style="background:var(--glass-bg-strong);backdrop-filter:blur(20px)">
+              <img src="个人照.jpg" alt="蒋天祺" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll-down arrow -->
+    <a href="#education" class="scroll-arrow absolute bottom-8 left-1/2 -translate-x-1/2" style="color:var(--text-tertiary)">
+      <i data-lucide="chevron-down" class="w-6 h-6"></i>
+    </a>
+  </section>
+
+
+  <!-- ==================== EDUCATION ==================== -->
+  <section id="education" class="flex items-center py-6 relative" style="min-height: calc(100vh - 5rem); background: var(--bg-page-alt)">
+    <!-- Scroll-up arrow -->
+    <a href="#hero" class="scroll-arrow-up absolute top-3 left-1/2 -translate-x-1/2" style="color:var(--text-tertiary)">
+      <i data-lucide="chevron-up" class="w-6 h-6"></i>
+    </a>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 reveal">
+        <h2 class="section-title" style="color:var(--text-primary)">
+          <i data-lucide="graduation-cap" class="w-7 h-7" style="color:#6366f1"></i>
+          教育背景
+          <span class="text-sm font-normal" style="color:var(--text-tertiary)">Education</span>
+        </h2>
+      </div>
+
+      <div class="glass-card p-4 sm:p-5 reveal">
+        <!-- 学校信息 -->
+        <div class="flex items-center justify-between mb-3">
+          <span class="inline-flex items-center justify-center rounded-xl p-2 flex-shrink-0" style="background:rgba(255,255,255,0.88)">
+            <img src="华工校名.png" alt="华南理工大学" class="h-8 sm:h-10 object-contain">
+          </span>
+          <span class="text-sm sm:text-base font-bold whitespace-nowrap -translate-x-[15px]" style="color:var(--text-primary)">2020.9 — 2027.6</span>
+        </div>
+
+        <!-- 分隔线 -->
+        <div class="glass-divider mb-3"></div>
+
+        <!-- 硕士 -->
+        <div class="mb-3">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="px-2 py-0.5 rounded-full text-sm font-semibold" style="background:rgba(99,102,241,0.12);color:#6366f1">硕士</span>
+            <span class="text-sm" style="color:var(--text-tertiary)">2024.09 — 2027.06</span>
+          </div>
+          <p class="text-sm font-semibold mb-1" style="color:var(--text-primary)">交通信息工程及控制（保研）</p>
+          <div class="space-y-0.5 text-sm" style="color:var(--text-secondary)">
+            <p>研究课题：面向内涝灾害的智慧交通应急系统研发与应用</p>
+            <p>研究成果：获 3 项发明专利授权，一篇计算机顶会（KDD2026）在投</p>
+          </div>
+        </div>
+
+        <!-- 分隔线 -->
+        <div class="glass-divider mb-3"></div>
+
+        <!-- 本科 -->
+        <div class="mb-3">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="px-2 py-0.5 rounded-full text-sm font-semibold" style="background:rgba(100,116,139,0.1);color:var(--text-tertiary)">本科</span>
+            <span class="text-sm" style="color:var(--text-tertiary)">2020.09 — 2024.06</span>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <p class="text-sm font-semibold" style="color:var(--text-primary)">交通工程 + 计算机科学与技术（辅修）</p>
+            <span class="skill-tag text-xs" style="background:rgba(99,102,241,0.08);border-color:rgba(99,102,241,0.15);color:#6366f1">GPA 3.65 (Top 10%)</span>
+          </div>
+
+          <div class="glass-divider mb-2"></div>
+
+          <!-- 主修课程（标签样式） -->
+          <div class="mb-2">
+            <h4 class="text-xs font-semibold uppercase tracking-wider mb-1" style="color:var(--text-tertiary)">主修课程</h4>
+            <div class="flex flex-wrap gap-1">
+              <span class="skill-tag text-xs" style="background:rgba(6,182,212,0.06);border-color:rgba(6,182,212,0.15);color:#0891b2">智能网联汽车</span>
+              <span class="skill-tag text-xs" style="background:rgba(6,182,212,0.06);border-color:rgba(6,182,212,0.15);color:#0891b2">数字图像处理</span>
+              <span class="skill-tag text-xs" style="background:rgba(6,182,212,0.06);border-color:rgba(6,182,212,0.15);color:#0891b2">Python</span>
+              <span class="skill-tag text-xs" style="background:rgba(6,182,212,0.06);border-color:rgba(6,182,212,0.15);color:#0891b2">数据结构</span>
+              <span class="skill-tag text-xs" style="background:rgba(6,182,212,0.06);border-color:rgba(6,182,212,0.15);color:#0891b2">计算机组成原理</span>
+              <span class="skill-tag text-xs" style="background:rgba(6,182,212,0.06);border-color:rgba(6,182,212,0.15);color:#0891b2">数据库技术与应用</span>
+              <span class="skill-tag text-xs" style="background:rgba(6,182,212,0.06);border-color:rgba(6,182,212,0.15);color:#0891b2">机器学习</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 分隔线 -->
+        <div class="glass-divider mb-2"></div>
+
+        <!-- 荣誉 & 奖学金 -->
+        <div class="mb-2">
+          <h4 class="text-xs font-semibold uppercase tracking-wider mb-1" style="color:var(--text-tertiary)">荣誉 & 奖学金</h4>
+          <div class="flex flex-wrap gap-1">
+            <span class="skill-tag text-xs" style="background:rgba(251,191,36,0.1);border-color:rgba(251,191,36,0.2)"><i data-lucide="trophy" class="w-3 h-3" style="color:#f59e0b"></i> 校三好学生（2024）</span>
+            <span class="skill-tag text-xs" style="background:rgba(251,191,36,0.1);border-color:rgba(251,191,36,0.2)"><i data-lucide="award" class="w-3 h-3" style="color:#f59e0b"></i> 校二等奖学金（2024）</span>
+            <span class="skill-tag text-xs" style="background:rgba(251,191,36,0.1);border-color:rgba(251,191,36,0.2)"><i data-lucide="award" class="w-3 h-3" style="color:#f59e0b"></i> 学生干部奖学金（2024）</span>
+            <span class="skill-tag text-xs" style="background:rgba(251,191,36,0.1);border-color:rgba(251,191,36,0.2)"><i data-lucide="award" class="w-3 h-3" style="color:#f59e0b"></i> 校科创竞赛奖学金（2023）</span>
+          </div>
+        </div>
+
+        <div class="glass-divider mb-2"></div>
+
+        <!-- 竞赛成绩 -->
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider mb-1" style="color:var(--text-tertiary)">竞赛成绩</h4>
+          <div class="flex flex-wrap gap-1">
+            <span class="skill-tag text-xs" style="background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.15)"><i data-lucide="medal" class="w-3 h-3" style="color:#ef4444"></i> 全国高校智能交通创新与创业大赛 企业赛道金奖（2025）</span>
+            <span class="skill-tag text-xs" style="background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.15)"><i data-lucide="medal" class="w-3 h-3" style="color:#ef4444"></i> 国家级大创优秀结题（2024）</span>
+            <span class="skill-tag text-xs" style="background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.15)"><i data-lucide="medal" class="w-3 h-3" style="color:#ef4444"></i> ICAN创新创业大赛 华南赛区一等奖（2023）</span>
+            <span class="skill-tag text-xs" style="background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.15)"><i data-lucide="medal" class="w-3 h-3" style="color:#ef4444"></i> 挑战杯 广东省特等奖（2023）</span>
+            <span class="skill-tag text-xs" style="background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.15)"><i data-lucide="medal" class="w-3 h-3" style="color:#ef4444"></i> 全国大学生交通科技大赛 国家一等奖（2022）</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll-down arrow -->
+    <a href="#skills" class="scroll-arrow absolute bottom-3 left-1/2 -translate-x-1/2" style="color:var(--text-tertiary)">
+      <i data-lucide="chevron-down" class="w-6 h-6"></i>
+    </a>
+  </section>
+
+
+  <!-- ==================== SKILLS ==================== -->
+  <section id="skills" class="flex items-center py-6 relative" style="min-height: calc(100vh - 5rem); background: var(--bg-page)">
+    <!-- Scroll-up arrow -->
+    <a href="#education" class="scroll-arrow-up absolute top-3 left-1/2 -translate-x-1/2" style="color:var(--text-tertiary)">
+      <i data-lucide="chevron-up" class="w-6 h-6"></i>
+    </a>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="mb-12 reveal">
+        <h2 class="section-title" style="color:var(--text-primary)">
+          <i data-lucide="zap" class="w-7 h-7" style="color:#6366f1"></i>
+          工作技能
+          <span class="text-sm font-normal" style="color:var(--text-tertiary)">Skills</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- 产品技能 -->
+        <div id="skillProductCard" class="glass-card p-6 reveal skill-card-clickable">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(99,102,241,0.12)">
+            <i data-lucide="pen-tool" class="w-5 h-5" style="color:#6366f1"></i>
+          </div>
+          <h3 class="text-base font-bold mb-1" style="color:var(--text-primary)">产品技能</h3>
+          <div class="skill-carousel" data-skills="PRD 撰写,Figma,Axure,Xmind,Excel 透视表,MySQL,Tableau">
+            <div class="skill-carousel-display">
+              <span class="skill-carousel-text gradient-text">PRD 撰写</span>
+            </div>
+            <div class="skill-carousel-dots"></div>
+          </div>
+        </div>
+
+        <!-- AI 能力 -->
+        <div id="skillAICard" class="glass-card p-6 reveal skill-card-clickable">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(139,92,246,0.12)">
+            <i data-lucide="bot" class="w-5 h-5" style="color:#8b5cf6"></i>
+          </div>
+          <h3 class="text-base font-bold mb-1" style="color:var(--text-primary)">AI 能力</h3>
+          <div class="skill-carousel" data-skills="Claude Code,Codex,Vibe Coding,提示词工程,Skill 开发">
+            <div class="skill-carousel-display">
+              <span class="skill-carousel-text gradient-text">Claude Code</span>
+            </div>
+            <div class="skill-carousel-dots"></div>
+          </div>
+        </div>
+
+        <!-- 英语 -->
+        <div id="skillEnglishCard" class="glass-card p-6 reveal skill-card-clickable">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style="background:rgba(6,182,212,0.12)">
+            <i data-lucide="globe" class="w-5 h-5" style="color:#06b6d4"></i>
+          </div>
+          <h3 class="text-base font-bold mb-1" style="color:var(--text-primary)">英语能力</h3>
+          <div class="skill-carousel">
+            <div class="skill-carousel-display">
+              <span class="skill-carousel-text gradient-text">IELTS 6.5</span>
+            </div>
+            <div class="skill-carousel-dots">
+              <span class="skill-carousel-dot active"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 产品技能详情卡片 -->
+      <div id="skillDetailCard" class="skill-detail-card">
+        <div class="p-5 sm:p-6 rounded-[1.5rem] border" style="background:var(--skill-detail-bg);border-color:var(--skill-detail-border)">
+          <div class="flex items-center gap-3 text-base" style="color:var(--text-secondary)">
+            <i data-lucide="pen-tool" class="w-5 h-5 flex-shrink-0" style="color:#6366f1"></i>
+            <span>具备完整PRD产品需求文档撰写能力，熟练使用 Figma、Axure、Visio、XMind 等主流产品设计与流程梳理工具；熟练使用 Excel 数据透视表数据分析，掌握 MySQL 基础数据查询及 Tableau 可视化分析能力。</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI能力详情卡片 -->
+      <div id="skillAIDetailCard" class="skill-detail-card">
+        <div class="p-5 sm:p-6 rounded-[1.5rem] border" style="background:var(--skill-detail-bg);border-color:var(--skill-detail-border)">
+          <div class="flex items-center gap-3 text-base" style="color:var(--text-secondary)">
+            <i data-lucide="bot" class="w-5 h-5 flex-shrink-0" style="color:#8b5cf6"></i>
+            <span>重度使用 Claude Code、Codex 等 Vibe Coding 工具，并且有提示词工程、Skill 开发的实践经验。</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 英语能力详情卡片 -->
+      <div id="skillEnglishDetailCard" class="skill-detail-card">
+        <div class="p-5 sm:p-6 rounded-[1.5rem] border" style="background:var(--skill-detail-bg);border-color:var(--skill-detail-border)">
+          <div class="flex items-center gap-3 text-base" style="color:var(--text-secondary)">
+            <i data-lucide="globe" class="w-5 h-5 flex-shrink-0" style="color:#06b6d4"></i>
+            <span>雅思6.5，具备良好的英文读写与沟通能力，能胜任海外产品工作。</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll-down arrow -->
+    <a href="#experience" class="scroll-arrow absolute bottom-3 left-1/2 -translate-x-1/2" style="color:var(--text-tertiary)">
+      <i data-lucide="chevron-down" class="w-6 h-6"></i>
+    </a>
+  </section>
+
+
+  <!-- ==================== EXPERIENCE ==================== -->
+  <section id="experience" class="flex items-center py-6 relative" style="min-height: calc(100vh - 5rem); background: var(--bg-page-alt)">
+    <!-- Scroll-up arrow -->
+    <a href="#skills" class="scroll-arrow-up absolute top-3 left-1/2 -translate-x-1/2" style="color:var(--text-tertiary)">
+      <i data-lucide="chevron-up" class="w-6 h-6"></i>
+    </a>
+
+    <!-- Scroll-down arrow -->
+    <a href="#blog" class="scroll-arrow absolute bottom-3 left-1/2 -translate-x-1/2" style="color:var(--text-tertiary)">
+      <i data-lucide="chevron-down" class="w-6 h-6"></i>
+    </a>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="mb-8 reveal">
+        <h2 class="section-title" style="color:var(--text-primary)">
+          <i data-lucide="briefcase" class="w-7 h-7" style="color:#6366f1"></i>
+          实习 & 创业经历
+          <span class="text-sm font-normal" style="color:var(--text-tertiary)">Experience</span>
+        </h2>
+      </div>
+
+      <!-- Carousel -->
+      <div class="carousel-container reveal">
+        <!-- Navigation Arrows -->
+        <button id="carouselPrev" class="carousel-arrow carousel-arrow-left" aria-label="上一段经历">
+          <i data-lucide="chevron-left" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+        </button>
+        <button id="carouselNext" class="carousel-arrow carousel-arrow-right" aria-label="下一段经历">
+          <i data-lucide="chevron-right" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+        </button>
+
+        <div class="carousel-viewport">
+          <div id="carouselTrack" class="carousel-track">
+            <!-- Card 1: OPPO -->
+            <div class="carousel-card glass-card flex flex-col">
+              <div class="p-4 sm:p-5 flex-shrink-0">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,197,94,0.12)">
+                      <i data-lucide="smartphone" class="w-5 h-5" style="color:#22c55e"></i>
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-2">
+                        <h3 class="text-base sm:text-lg font-bold" style="color:var(--text-primary)">OPPO · 互联网服务系统</h3>
+                        <span class="px-2 py-0.5 rounded-full text-xs font-medium flex-shrink-0" style="background:rgba(34,197,94,0.12);color:#22c55e">实习</span>
+                      </div>
+                      <p class="text-sm font-medium" style="color:var(--text-secondary)">海外应用商店 · 产品实习生</p>
+                    </div>
+                  </div>
+                  <span class="text-sm font-medium whitespace-nowrap ml-3" style="color:var(--text-tertiary)">2026.03 — 2026.06</span>
+                </div>
+              </div>
+              <div class="glass-divider mx-4 sm:mx-5 flex-shrink-0"></div>
+              <div class="p-4 sm:p-5 flex flex-col gap-3 flex-1 overflow-y-auto">
+                <div class="exp-sub-card">
+                  <div class="flex items-center gap-2 w-full">
+                    <i data-lucide="flask-conical" class="w-4 h-4 flex-shrink-0" style="color:#8b5cf6"></i>
+                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">文案、图标、按钮样式 A/B 实验</h4>
+                    <div class="flex flex-wrap gap-1 ml-auto flex-shrink-0">
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(34,197,94,0.1);color:#22c55e">图标 CTR +2%</span>
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(34,197,94,0.1);color:#22c55e">人均下载 +0.5%</span>
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(34,197,94,0.1);color:#22c55e">按钮下载 +4%</span>
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(34,197,94,0.1);color:#22c55e">DAU +2%</span>
+                    </div>
+                  </div>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>背景：</b>依据海外用户偏好，开展商店文案、图标及按钮多轮 A/B 实验，优化本地化体验，提升留存与转化。</span>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>动作：</b>独立负责部分需求澄清，联动技术、数据团队敲定实验方案与埋点；配合运营完成实验配置及流量投放，依托 SQL 与透视表完成数据复盘与异动分析；制定后续迭代实验方案以验证用户新鲜感效应。</span>
+                </div>
+                <div class="exp-sub-card">
+                  <div class="flex items-center gap-2 w-full">
+                    <i data-lucide="layout-dashboard" class="w-4 h-4 flex-shrink-0" style="color:#06b6d4"></i>
+                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">新增商店桌面卡片</h4>
+                    <div class="flex flex-wrap gap-1 ml-auto flex-shrink-0">
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(34,197,94,0.1);color:#22c55e">弹窗同意率 >10%</span>
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(34,197,94,0.1);color:#22c55e">日活峰值 70 万</span>
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(34,197,94,0.1);color:#22c55e">日均安装 5 万次</span>
+                    </div>
+                  </div>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>背景：</b>依托桌面轻场景新增商店流量触点，借助桌卡抢占桌面曝光、沉淀用户心智，提升商店日活与分发。</span>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>动作：</b>梳理端内用户常用功能，开展竞品卡片调研，协助 PRD 撰写及需求澄清，主导产品验收与运营移交。</span>
+                </div>
+                <div class="exp-sub-card">
+                  <div class="flex items-center gap-2 w-full mb-2">
+                    <i data-lucide="image" class="w-4 h-4 flex-shrink-0" style="color:#6366f1"></i>
+                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">产品效果</h4>
+                  </div>
+                  <div class="flex gap-3 w-full">
+                    <img src="商店桌卡1.png" alt="商店桌卡效果1" class="rounded-lg object-cover flex-1 min-w-0" style="max-height: 200px;">
+                    <img src="商店桌卡2.png" alt="商店桌卡效果2" class="rounded-lg object-cover flex-1 min-w-0" style="max-height: 200px;">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: 科大讯飞 -->
+            <div class="carousel-card glass-card flex flex-col">
+              <div class="p-4 sm:p-5 flex-shrink-0">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(59,130,246,0.12)">
+                      <i data-lucide="car" class="w-5 h-5" style="color:#3b82f6"></i>
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-2">
+                        <h3 class="text-base sm:text-lg font-bold" style="color:var(--text-primary)">科大讯飞 · 星河智联</h3>
+                        <span class="px-2 py-0.5 rounded-full text-xs font-medium flex-shrink-0" style="background:rgba(59,130,246,0.12);color:#3b82f6">实习</span>
+                      </div>
+                      <p class="text-sm font-medium" style="color:var(--text-secondary)">智能座舱 · 产品实习生</p>
+                    </div>
+                  </div>
+                  <span class="text-sm font-medium whitespace-nowrap ml-3" style="color:var(--text-tertiary)">2025.12 — 2026.03</span>
+                </div>
+              </div>
+              <div class="glass-divider mx-4 sm:mx-5 flex-shrink-0"></div>
+              <div class="p-4 sm:p-5 flex flex-col gap-3 flex-1 overflow-y-auto">
+                <div class="exp-sub-card">
+                  <div class="flex items-center gap-2 w-full">
+                    <i data-lucide="shield-check" class="w-4 h-4 flex-shrink-0" style="color:#f59e0b"></i>
+                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">车机智能影像业务合规</h4>
+                  </div>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>背景：</b>应国家网络安全中心要求，广汽车机系统应用需新增隐私协议入口及用户授权功能。</span>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>动作：</b>梳理需新增的授权功能及协议内容；调研友商隐私协议签署流程，通过流程图梳理用户授权动线，使用 Figma 输出功能示意；协同依赖业务团队推进项目，独立承担 PRD 文档撰写及需求澄清工作。</span>
+                </div>
+                <div class="exp-sub-card">
+                  <div class="flex items-center gap-2 w-full">
+                    <i data-lucide="badge-check" class="w-4 h-4 flex-shrink-0" style="color:#8b5cf6"></i>
+                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">车机个人中心徽章（漫游中国）</h4>
+                  </div>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>背景：</b>面向年轻车主旅行打卡需求，广汽集团重点打造"漫游中国"车主个人徽章创新产品。</span>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>动作：</b>开展车机版高德地图能力调研、竞品分析与用户需求梳理，协同研发团队定义徽章点亮规则与技术实现方案；输出完整需求文档，推动跨团队评审与落地。</span>
+                </div>
+                <div class="exp-sub-card">
+                  <div class="flex items-center gap-2 w-full">
+                    <i data-lucide="languages" class="w-4 h-4 flex-shrink-0" style="color:#06b6d4"></i>
+                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">智驾 & 地图业务翻译及功能维护</h4>
+                    <div class="flex flex-wrap gap-1 ml-auto flex-shrink-0">
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(34,197,94,0.1);color:#22c55e">翻译近千条</span>
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(34,197,94,0.1);color:#22c55e">修复 30+ BUG</span>
+                    </div>
+                  </div>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>背景：</b>适配广汽海外车型出海需求，负责车机智驾、地图板块多语言文案适配及语音后台日常维护。</span>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>成果：</b>负责智驾、地图词条翻译校对与维护，累计处理近千条；跟进修复 30 余个界面及语音功能 BUG。</span>
+                </div>
+                <div class="exp-sub-card">
+                  <div class="flex items-center gap-2 w-full">
+                    <i data-lucide="search" class="w-4 h-4 flex-shrink-0" style="color:#ec4899"></i>
+                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">专项竞品调研</h4>
+                  </div>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>背景：</b>负责业务对组内规划/开发中的若干需求进行线下竞品调研，了解主流趋势。</span>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>成果：</b>独立线下调研、试驾 5 家新能源车企，采集产品真实表现和个人感受，总结输出相关分析报告和资料。</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: 小橙智算 -->
+            <div class="carousel-card glass-card flex flex-col">
+              <div class="p-4 sm:p-5 flex-shrink-0">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(249,115,22,0.12)">
+                      <i data-lucide="cpu" class="w-5 h-5" style="color:#f97316"></i>
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-2">
+                        <h3 class="text-base sm:text-lg font-bold" style="color:var(--text-primary)">小橙智算科技有限公司</h3>
+                        <span class="px-2 py-0.5 rounded-full text-xs font-medium flex-shrink-0" style="background:rgba(249,115,22,0.12);color:#f97316">实习</span>
+                      </div>
+                      <p class="text-sm font-medium" style="color:var(--text-secondary)">ToG 算法服务 · 产品实习生</p>
+                    </div>
+                  </div>
+                  <span class="text-sm font-medium whitespace-nowrap ml-3" style="color:var(--text-tertiary)">2025.08 — 2025.11</span>
+                </div>
+              </div>
+              <div class="glass-divider mx-4 sm:mx-5 flex-shrink-0"></div>
+              <div class="p-4 sm:p-5 flex flex-col gap-3 flex-1 overflow-y-auto">
+                <div class="exp-sub-card">
+                  <div class="flex items-center gap-2 w-full">
+                    <i data-lucide="brain" class="w-4 h-4 flex-shrink-0" style="color:#8b5cf6"></i>
+                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">智慧交警智能体</h4>
+                    <div class="flex flex-wrap gap-1 ml-auto flex-shrink-0">
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(34,197,94,0.1);color:#22c55e">50+ 路口效率 +15%</span>
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(34,197,94,0.1);color:#22c55e">年省警力 ~500 万</span>
+                    </div>
+                  </div>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>背景：</b>交通信号灯优化算法的商业化转化，推动算法落地为可复用、可推广的软件产品。</span>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>动作：</b>参与多地项目售前支持与实际交付工作；访谈 10 余位一线交警，挖掘真实场景与需求；完成 8 款竞品的多维度调研与对比分析。</span>
+                </div>
+                <div class="exp-sub-card">
+                  <div class="flex items-center gap-2 w-full">
+                    <i data-lucide="file-text" class="w-4 h-4 flex-shrink-0" style="color:#3b82f6"></i>
+                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">产品方案输出</h4>
+                  </div>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>产出：</b>协同技术、商业团队锚定"算法先进、成本可控、即插即用"的核心定位，制定产品迭代路径；独立输出首个 PRD 文档、3 版竞品分析报告，并支持 10+ 版 BP 材料制作。</span>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>成果：</b>产品方案助力团队斩获"全国人工智能应用场景创新挑战赛"第二名。</span>
+                </div>
+                <div class="exp-sub-card">
+                  <div class="flex items-center gap-2 w-full">
+                    <i data-lucide="git-branch" class="w-4 h-4 flex-shrink-0" style="color:#22c55e"></i>
+                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">溢出控制功能落地</h4>
+                    <div class="flex flex-wrap gap-1 ml-auto flex-shrink-0">
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(34,197,94,0.1);color:#22c55e">稳定运行 100+ 天</span>
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(34,197,94,0.1);color:#22c55e">溢流次数 ↓50%</span>
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(34,197,94,0.1);color:#22c55e">年省警力 ~500 万</span>
+                    </div>
+                  </div>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>背景：</b>针对高峰期车辆拥塞至路口中央造成交通瘫痪，充分利用现有数据与交通管理经验，为产品增加路口溢流控制功能。</span>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>动作：</b>主导设计溢流触发条件与控制规则，协同项目团队完成首批 4 个路口的现场部署，开展 A/B 测试并进行效果评估，协助技术团队进行优化迭代。</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: 早吖早 -->
+            <div class="carousel-card glass-card flex flex-col">
+              <div class="p-4 sm:p-5 flex-shrink-0">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(251,191,36,0.12)">
+                      <i data-lucide="sunrise" class="w-5 h-5" style="color:#f59e0b"></i>
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-2">
+                        <h3 class="text-base sm:text-lg font-bold" style="color:var(--text-primary)">早吖早 · 送餐到寝</h3>
+                        <span class="px-2 py-0.5 rounded-full text-xs font-medium flex-shrink-0" style="background:rgba(251,191,36,0.12);color:#f59e0b">创业</span>
+                      </div>
+                      <p class="text-sm font-medium" style="color:var(--text-secondary)">联合创始人</p>
+                    </div>
+                  </div>
+                  <span class="text-sm font-medium whitespace-nowrap ml-3" style="color:var(--text-tertiary)">2022.03 — 2023.06</span>
+                </div>
+              </div>
+              <div class="glass-divider mx-4 sm:mx-5 flex-shrink-0"></div>
+              <div class="p-4 sm:p-5 flex flex-col gap-3 flex-1 overflow-y-auto">
+                <div class="exp-sub-card">
+                  <div class="flex items-center gap-2 w-full">
+                    <i data-lucide="sunrise" class="w-4 h-4 flex-shrink-0" style="color:#f59e0b"></i>
+                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">早餐预定 + 送餐到寝</h4>
+                    <div class="flex flex-wrap gap-1 ml-auto flex-shrink-0">
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(251,191,36,0.12);color:#b45309">年营收 500 万</span>
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(251,191,36,0.12);color:#b45309">净利润 80 万</span>
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(251,191,36,0.12);color:#b45309">服务用户 30 万+</span>
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(251,191,36,0.12);color:#b45309">公益 5,000+ 人次</span>
+                    </div>
+                  </div>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>背景：</b>校园线上早餐预定创业项目，主打早餐预定 + 送餐到寝服务，业务覆盖广州 6 所高校的 12 个校区。</span>
+                  <span class="text-xs" style="color:var(--text-secondary)"><b>动作：</b>统筹财务核算与后台数据监控；联动支教组织策划落地爱心早餐公益联名活动；参与供应商渠道拓展。</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dot Indicators -->
+        <div class="carousel-dots">
+          <button class="carousel-dot active" data-index="0" aria-label="第1段经历"></button>
+          <button class="carousel-dot" data-index="1" aria-label="第2段经历"></button>
+          <button class="carousel-dot" data-index="2" aria-label="第3段经历"></button>
+          <button class="carousel-dot" data-index="3" aria-label="第4段经历"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== BLOG ==================== -->
+  <section id="blog" class="flex items-center py-6 relative" style="min-height: calc(100vh - 5rem); background: var(--bg-page)">
+    <!-- Scroll-up arrow -->
+    <a href="#experience" class="scroll-arrow-up absolute top-3 left-1/2 -translate-x-1/2" style="color:var(--text-tertiary)">
+      <i data-lucide="chevron-up" class="w-6 h-6"></i>
+    </a>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="mb-12 reveal">
+        <h2 class="section-title" style="color:var(--text-primary)">
+          <i data-lucide="pen-line" class="w-7 h-7" style="color:#6366f1"></i>
+          产品思考
+          <span class="text-sm font-normal" style="color:var(--text-tertiary)">Thinking</span>
+        </h2>
+        <p class="mt-3 text-sm" style="color:var(--text-secondary)">记录我观察产品的视角和做产品的反思。好的产品经理，脑子里应该随时在运转"为什么"。</p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Blog Post 1 -->
+        <a href="blog/post-1.html" class="glass-card p-6 flex flex-col sm:flex-row sm:items-center gap-4 reveal hover:shadow-lg transition-all duration-300 group no-underline">
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="px-2 py-0.5 rounded-full text-xs font-medium" style="background:rgba(168,85,247,0.1);color:#a855f7">产品设计</span>
+              <span class="text-xs" style="color:var(--text-tertiary)">2025.12.15</span>
+            </div>
+            <h3 class="text-lg font-bold mb-2 group-hover:gradient-text transition-all" style="color:var(--text-primary)">为什么"简洁"是 B 端产品的第一原则？</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--text-secondary)">从一次客户演示失败的复盘出发，聊聊 B 端产品为什么容易变得复杂，以及如何用"减法思维"做产品决策。</p>
+          </div>
+          <div class="flex-shrink-0">
+            <span class="inline-flex items-center gap-1 text-sm font-medium" style="color:#6366f1">
+              阅读 <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+            </span>
+          </div>
+        </a>
+
+        <!-- Blog Post 2 -->
+        <a href="blog/post-2.html" class="glass-card p-6 flex flex-col sm:flex-row sm:items-center gap-4 reveal hover:shadow-lg transition-all duration-300 group no-underline">
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="px-2 py-0.5 rounded-full text-xs font-medium" style="background:rgba(34,197,94,0.1);color:#22c55e">用户研究</span>
+              <span class="text-xs" style="color:var(--text-tertiary)">2025.10.28</span>
+            </div>
+            <h3 class="text-lg font-bold mb-2 group-hover:gradient-text transition-all" style="color:var(--text-primary)">学会问"愚蠢的问题"：我的用户访谈方法论</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--text-secondary)">大多数用户访谈的问题在于提问者太聪明。总结我踩过的坑和提炼的访谈框架。</p>
+          </div>
+          <div class="flex-shrink-0">
+            <span class="inline-flex items-center gap-1 text-sm font-medium" style="color:#6366f1">
+              阅读 <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+            </span>
+          </div>
+        </a>
+
+        <!-- Blog Post 3 -->
+        <a href="blog/post-3.html" class="glass-card p-6 flex flex-col sm:flex-row sm:items-center gap-4 reveal hover:shadow-lg transition-all duration-300 group no-underline">
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="px-2 py-0.5 rounded-full text-xs font-medium" style="background:rgba(251,191,36,0.1);color:#f59e0b">行业观察</span>
+              <span class="text-xs" style="color:var(--text-tertiary)">2025.09.10</span>
+            </div>
+            <h3 class="text-lg font-bold mb-2 group-hover:gradient-text transition-all" style="color:var(--text-primary)">抖音外卖为什么做不起来？一个产品经理的思考</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--text-secondary)">从用户场景、心智模型和交易成本三个角度，分析抖音在外卖赛道的结构性困境。</p>
+          </div>
+          <div class="flex-shrink-0">
+            <span class="inline-flex items-center gap-1 text-sm font-medium" style="color:#6366f1">
+              阅读 <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll-down arrow -->
+    <a href="#projects" class="scroll-arrow absolute bottom-3 left-1/2 -translate-x-1/2" style="color:var(--text-tertiary)">
+      <i data-lucide="chevron-down" class="w-6 h-6"></i>
+    </a>
+  </section>
+
+
+  <!-- ==================== PROJECTS ==================== -->
+  <section id="projects" class="flex items-center py-6 relative" style="min-height: calc(100vh - 5rem); background: var(--bg-page-alt)">
+    <!-- Scroll-up arrow -->
+    <a href="#blog" class="scroll-arrow-up absolute top-3 left-1/2 -translate-x-1/2" style="color:var(--text-tertiary)">
+      <i data-lucide="chevron-up" class="w-6 h-6"></i>
+    </a>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="mb-12 reveal">
+        <h2 class="section-title" style="color:var(--text-primary)">
+          <i data-lucide="flask-conical" class="w-7 h-7" style="color:#6366f1"></i>
+          科研项目
+          <span class="text-sm font-normal" style="color:var(--text-tertiary)">Research</span>
+        </h2>
+      </div>
+
+      <div class="glass-card p-6 sm:p-8 reveal">
+        <div class="flex flex-col sm:flex-row gap-5">
+          <div class="flex-shrink-0">
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center" style="background:rgba(99,102,241,0.12)">
+              <i data-lucide="bar-chart-3" class="w-7 h-7" style="color:#6366f1"></i>
+            </div>
+          </div>
+          <div class="flex-1">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
+              <h3 class="text-lg font-bold" style="color:var(--text-primary)">基于 AI 和有限轨迹数据的新型道路交通密度感知技术研发与应用</h3>
+              <span class="text-sm font-medium whitespace-nowrap" style="color:var(--text-tertiary)">2021.12 — 2023.06</span>
+            </div>
+            <p class="text-sm font-medium mb-4" style="color:var(--text-secondary)">项目负责人</p>
+
+            <div class="space-y-4">
+              <div>
+                <h4 class="text-xs font-semibold uppercase tracking-wider mb-1.5" style="color:var(--text-tertiary)">项目背景</h4>
+                <p class="text-sm leading-relaxed" style="color:var(--text-secondary)">研发基于浮动车轨迹数据的低成本交通密度预测方案，采用集成学习技术实现高精度预测，可应用于高速公路流量控制及城市道路疏导管控，显著降低硬件投入成本。</p>
+              </div>
+
+              <div>
+                <h4 class="text-xs font-semibold uppercase tracking-wider mb-1.5" style="color:var(--text-tertiary)">我的工作</h4>
+                <ul class="space-y-1.5 text-sm" style="color:var(--text-secondary)">
+                  <li class="flex gap-2"><span class="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style="background:#6366f1"></span>统筹团队分工与进度把控，提出增加路阻系数作为模型输入，显著提高预测精度</li>
+                  <li class="flex gap-2"><span class="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style="background:#6366f1"></span>根据数据特性筛选合适神经网络架构，通过消融实验构建最优融合决策模型</li>
+                  <li class="flex gap-2"><span class="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style="background:#6366f1"></span>使用 Tableau 进行预测结果展示，作为主讲参加交科赛、挑战杯等国家级赛事路演</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 class="text-xs font-semibold uppercase tracking-wider mb-1.5" style="color:var(--text-tertiary)">成果</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="skill-tag text-xs" style="background:rgba(99,102,241,0.1);border-color:rgba(99,102,241,0.2)"><i data-lucide="file-check" class="w-3 h-3" style="color:#6366f1"></i> 授权发明专利 1 项</span>
+                  <span class="skill-tag text-xs" style="background:rgba(99,102,241,0.1);border-color:rgba(99,102,241,0.2)"><i data-lucide="file-check" class="w-3 h-3" style="color:#6366f1"></i> 软件著作权 3 项</span>
+                  <span class="skill-tag text-xs" style="background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.15)"><i data-lucide="trophy" class="w-3 h-3" style="color:#ef4444"></i> 交科赛国家一等奖（全国前3%）</span>
+                  <span class="skill-tag text-xs" style="background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.15)"><i data-lucide="trophy" class="w-3 h-3" style="color:#ef4444"></i> 挑战杯广东省特等奖</span>
+                  <span class="skill-tag text-xs" style="background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.15)"><i data-lucide="trophy" class="w-3 h-3" style="color:#ef4444"></i> ICAN 华南赛区一等奖</span>
+                  <span class="skill-tag text-xs" style="background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.15)"><i data-lucide="trophy" class="w-3 h-3" style="color:#ef4444"></i> 国家级大创优秀结题</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll-down arrow -->
+    <a href="#campus" class="scroll-arrow absolute bottom-3 left-1/2 -translate-x-1/2" style="color:var(--text-tertiary)">
+      <i data-lucide="chevron-down" class="w-6 h-6"></i>
+    </a>
+  </section>
+
+
+  <!-- ==================== CAMPUS ==================== -->
+  <section id="campus" class="relative" style="background: var(--bg-page)">
+    <!-- Scroll-up arrow -->
+    <a href="#projects" class="scroll-arrow-up absolute top-3 left-1/2 -translate-x-1/2" style="color:var(--text-tertiary)">
+      <i data-lucide="chevron-up" class="w-6 h-6"></i>
+    </a>
+
+    <!-- 校园经历内容 -->
+    <div class="flex items-center" style="min-height: calc(100vh - 11rem)">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-6">
+        <div class="mb-12 reveal">
+          <h2 class="section-title" style="color:var(--text-primary)">
+            <i data-lucide="building" class="w-7 h-7" style="color:#6366f1"></i>
+            校园经历
+            <span class="text-sm font-normal" style="color:var(--text-tertiary)">Campus</span>
+          </h2>
+        </div>
+
+        <div class="glass-card p-6 sm:p-8 reveal">
+          <div class="flex flex-col sm:flex-row gap-5">
+            <div class="flex-shrink-0">
+              <div class="w-14 h-14 rounded-2xl flex items-center justify-center" style="background:rgba(99,102,241,0.12)">
+                <i data-lucide="briefcase-business" class="w-7 h-7" style="color:#6366f1"></i>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
+                <h3 class="text-lg font-bold" style="color:var(--text-primary)">华南理工大学学生就业指导中心</h3>
+                <span class="text-sm font-medium" style="color:var(--text-tertiary)">2023.03 — 2024.06</span>
+              </div>
+              <p class="text-sm font-medium mb-3" style="color:var(--text-secondary)">学生助理</p>
+              <ul class="space-y-2 text-sm" style="color:var(--text-secondary)">
+                <li class="flex gap-2"><span class="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style="background:#6366f1"></span><strong>市场信息科工作：</strong>发布、管理、维护企业提供的就业信息；协助举办毕业典礼暨学位授予仪式</li>
+                <li class="flex gap-2"><span class="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style="background:#6366f1"></span><strong>企业入校对接：</strong>独立对接 40 余家企业入校开展宣讲、面试活动，为学生和企业之间搭建沟通渠道</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部 Banner -->
+    <div class="py-8 border-t" style="background:var(--bg-page-alt);border-color:var(--glass-border)">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <p class="text-sm" style="color:var(--text-secondary)">
+          © 2026 蒋天祺 &nbsp;|&nbsp; Built with Claude Code × DeepSeek V4
+        </p>
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-xl" style="background:var(--gradient-hero);color:#fff;box-shadow:0 4px 24px rgba(99,102,241,0.3)" aria-label="回到顶部">
+          <i data-lucide="arrow-up" class="w-5 h-5"></i>
+          回到顶部
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script src="js/main.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

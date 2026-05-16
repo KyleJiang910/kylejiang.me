@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="抖音外卖为什么做不起来？一个产品经理的思考 — 蒋天祺的产品思考">
+  <title>抖音外卖为什么做不起来？一个产品经理的思考 — 蒋天祺</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans SC"', '"Inter"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe',
+              300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1',
+              600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    .prose h2 { font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-top: 2rem; margin-bottom: 0.75rem; }
+    .dark .prose h2 { color: #f1f5f9; }
+    .prose h3 { font-size: 1.15rem; font-weight: 600; color: #334155; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .dark .prose h3 { color: #cbd5e1; }
+    .prose p { margin-bottom: 1rem; line-height: 1.85; color: #475569; }
+    .dark .prose p { color: #94a3b8; }
+    .prose ul { list-style-type: disc; padding-left: 1.25rem; margin-bottom: 1rem; }
+    .prose ul li { margin-bottom: 0.5rem; line-height: 1.85; color: #475569; }
+    .dark .prose ul li { color: #94a3b8; }
+    .prose blockquote {
+      border-left: 3px solid #6366f1; padding-left: 1rem; margin: 1.5rem 0;
+      color: #64748b; font-style: italic;
+    }
+    .dark .prose blockquote { border-left-color: #818cf8; color: #94a3b8; }
+    .prose strong { color: #0f172a; font-weight: 600; }
+    .dark .prose strong { color: #e2e8f0; }
+  </style>
+</head>
+<body class="bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 font-sans transition-colors duration-300">
+
+  <nav class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="../index.html" class="text-lg font-bold text-slate-900 dark:text-white tracking-tight">
+        蒋天祺<span class="text-brand-500">.</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="../index.html#blog" class="text-sm text-slate-500 hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400 transition-colors">
+          <i data-lucide="arrow-left" class="w-4 h-4 inline mr-1"></i>产品思考
+        </a>
+        <button id="themeToggle" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="切换深色模式">
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-slate-400"></i>
+          <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-slate-500"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+    <header class="mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-2.5 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 rounded-md text-xs font-medium">行业观察</span>
+        <span class="text-sm text-slate-400">2025.09.10</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white leading-tight mb-4">
+        抖音外卖为什么做不起来？一个产品经理的思考
+      </h1>
+      <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
+        从用户场景、心智模型和交易成本三个角度，分析抖音在外卖赛道的结构性困境。
+      </p>
+    </header>
+
+    <div class="prose text-base">
+      <p>2023 年，抖音外卖被寄予厚望。坐拥 7 亿日活，手握顶级流量，似乎进入任何赛道都能搅动格局。但两年过去了，外卖业务始终不温不火。为什么？</p>
+
+      <p>这个问题值得每一个产品经理思考，因为它涉及一个产品里最底层的问题：<strong>流量能解决一切吗？</strong></p>
+
+      <h2>一、场景错配：你在娱乐，不是在做决策</h2>
+
+      <p>这是个关键差异：<strong>美团/饿了么的用户打开 App 时，已经完成了「我要吃饭」的决策。</strong>他们做的是「选择吃哪家」——一个低摩擦的执行动作。</p>
+
+      <p>抖音的用户在干什么？在看搞笑视频、在追热点、在杀时间。你突然推送一个外卖广告，用户需要完成一个认知跳跃：<strong>从「娱乐模式」切换到「决策模式」</strong>。这个切换的成本远比我们想象的高。</p>
+
+      <p>有人会说：那抖音电商不是做成了吗？娱乐场景也能卖货啊。</p>
+
+      <p>关键区别在于：<strong>买一件衣服可以是冲动消费，但吃饭很少是冲动决策。</strong>外卖有明确的时间约束（饿了、到饭点了），有口味偏好（不吃辣、要清淡），有性价比判断（同样的菜，美团可能更便宜）。这些都是高认知成本决策，不适合在「刷到」的场景下完成。</p>
+
+      <h2>二、心智模型：用户不信任抖音能送好外卖</h2>
+
+      <p>美团花了十几年建立的用户心智是：<strong>「打开美团 → 找到想吃的 → 下单 → 30 分钟内送到」</strong>。这背后是几百万骑手的调度系统、商家管理体系、客服和退款流程的长期积累。</p>
+
+      <p>抖音的用户心智是什么？<strong>「打开抖音 → 刷视频消磨时间」</strong>。</p>
+
+      <p>品牌延展最怕的就是<strong>心智冲突</strong>。就像麦当劳突然开始卖寿司——你的供应链是能做，但消费者会觉得哪里不对。抖音做外卖面临类似的困境：用户觉得你是一个内容平台，不是一个能把他热乎饭准时送到手里的人。</p>
+
+      <h2>三、供给端：商家为什么要配合你？</h2>
+
+      <p>外卖不是一个只靠流量就能撬动的生意。它需要：</p>
+
+      <ul>
+        <li><strong>商家体系</strong>：足够的商家覆盖，保证用户在任何位置都能点到满意的餐。</li>
+        <li><strong>配送网络</strong>：自有或合作的骑手团队，保证履约时效。</li>
+        <li><strong>运营团队</strong>：地推让商家入驻、培训商家使用后台、处理日常问题。</li>
+      </ul>
+
+      <p>美团在这三方面的壁垒是十几年积累的。抖音想用流量换时间，但<strong>双边市场的冷启动不是靠流量能砸穿的</strong>——商家看的是「你能给我带来多少订单」，而订单又取决于平台上有多少用户。典型的鸡生蛋蛋生鸡。</p>
+
+      <h2>四、交易成本视角</h2>
+
+      <p>产品思考的一个好工具是<strong>交易成本经济学</strong>：用户从一个方案切换到另一个方案，付出了什么额外成本？</p>
+
+      <p>从美团切换到抖音外卖，用户需要额外付出：</p>
+      <ul>
+        <li><strong>搜索成本</strong>：不确定抖音上有没有我想吃的店。</li>
+        <li><strong>比价成本</strong>：不确定抖音上的价格是不是最优的（美团有满减体系，用户已经建立了比价直觉）。</li>
+        <li><strong>信任成本</strong>：万一送慢了、送凉了、送到洒了，找谁赔？抖音客服会不会处理外卖问题？</li>
+      </ul>
+
+      <p>只有当抖音提供的价值（可能是更低的价格或独家优惠）大于这些切换成本时，用户才会尝试。而补贴一旦停止，用户大概率回流。</p>
+
+      <h2>五、那么抖音就没有机会了吗？</h2>
+
+      <p>也不是。我认为抖音外卖可以走的一条路是<strong>差异化场景</strong>：不做「日常吃饭」，做「非计划性餐饮消费」。</p>
+
+      <p>比如：下午茶（刷到一家新开的甜品店，就在附近）、夜宵（深夜刷饿了，直接下单烧烤）、周末聚餐（看到探店视频后直接购买套餐券）。这些场景的共同点是：<strong>由内容激发需求，而非由饥饿激发需求。</strong></p>
+
+      <p>这与抖音的核心能力（内容推荐 + 冲动转化）是匹配的。关键是要清晰地定义「我解决的是什么场景」，而不是「我也能做外卖」。</p>
+
+      <h2>六、写到最后</h2>
+
+      <blockquote>
+        <p>流量是放大器，不是发动机。如果你没有定义清楚用户为什么在「这个场景」下使用「你的产品」，再多流量也只会流走。</p>
+      </blockquote>
+
+      <p>这可能是抖音外卖给所有产品经理上的一课。</p>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-700">
+      <a href="../index.html#blog" class="inline-flex items-center gap-2 text-brand-600 dark:text-brand-400 font-medium hover:gap-3 transition-all">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> 回到产品思考
+      </a>
+    </div>
+  </article>
+
+  <script>
+    const THEME_KEY = 'theme';
+    function getTheme() {
+      const stored = localStorage.getItem(THEME_KEY);
+      if (stored) return stored;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function setTheme(theme) {
+      if (theme === 'dark') document.documentElement.classList.add('dark');
+      else document.documentElement.classList.remove('dark');
+      localStorage.setItem(THEME_KEY, theme);
+    }
+    setTheme(getTheme());
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+      setTheme(next);
+      lucide.createIcons();
+    });
+    lucide.createIcons();
+  </script>
+</body>
+</html>
