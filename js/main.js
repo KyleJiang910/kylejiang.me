@@ -313,16 +313,23 @@ document.querySelectorAll('.reveal').forEach(el => {
   pairs.forEach(function (pair) {
     if (!pair.trigger || !pair.detail) return;
 
-    var expanded = false;
-
     pair.trigger.addEventListener('click', function () {
-      expanded = !expanded;
-      if (expanded) {
-        pair.detail.classList.add('expanded');
-        pair.trigger.style.boxShadow = '0 0 24px var(--glow-blue), 0 0 48px var(--glow-purple)';
-      } else {
+      var isExpanded = pair.detail.classList.contains('expanded');
+
+      // Collapse all other details first
+      pairs.forEach(function (other) {
+        if (other.detail !== pair.detail) {
+          other.detail.classList.remove('expanded');
+          other.trigger.style.boxShadow = '';
+        }
+      });
+
+      if (isExpanded) {
         pair.detail.classList.remove('expanded');
         pair.trigger.style.boxShadow = '';
+      } else {
+        pair.detail.classList.add('expanded');
+        pair.trigger.style.boxShadow = '0 0 24px var(--glow-blue), 0 0 48px var(--glow-purple)';
       }
     });
   });

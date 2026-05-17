@@ -523,11 +523,17 @@
     ::-webkit-scrollbar-thumb { background: rgba(148,163,184,0.3); border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: rgba(148,163,184,0.5); }
 
-    /* ========== SKILLS GRID DESKTOP: force 3 cards in one row ========== */
+    /* ========== SKILLS GRID DESKTOP: cards row1, all details row2 ========== */
     @media (min-width: 768px) {
       #skillProductCard  { grid-row: 1; grid-column: 1; }
       #skillAICard       { grid-row: 1; grid-column: 2; }
       #skillEnglishCard  { grid-row: 1; grid-column: 3; }
+      #skillDetailCard,
+      #skillAIDetailCard,
+      #skillEnglishDetailCard {
+        grid-row: 2;
+        grid-column: 1 / -1;
+      }
     }
 
     /* ========== MOBILE RESPONSIVE (< 768px) ========== */
@@ -640,6 +646,24 @@
       /* --- Scroll arrows: hidden on mobile, let users swipe naturally --- */
       .scroll-arrow,
       .scroll-arrow-up {
+        display: none !important;
+      }
+
+      /* --- Skill detail cards: always visible on mobile, no click needed --- */
+      #skills .skill-detail-card {
+        max-height: none !important;
+        opacity: 1 !important;
+        overflow: visible !important;
+        transition: none !important;
+        margin-top: 0.5rem !important;
+      }
+      #skills .skill-detail-card.expanded {
+        margin-top: 0.5rem !important;
+      }
+      #skills .skill-card-clickable {
+        cursor: default !important;
+      }
+      #skills .skill-card-clickable::after {
         display: none !important;
       }
 
@@ -856,7 +880,7 @@
         <!-- 本科 -->
         <div class="mb-3">
           <div class="flex items-center gap-2 mb-1">
-            <span class="px-2 py-0.5 rounded-full text-sm font-semibold" style="background:rgba(100,116,139,0.1);color:var(--text-tertiary)">本科</span>
+            <span class="px-2 py-0.5 rounded-full text-sm font-semibold" style="background:rgba(99,102,241,0.12);color:#6366f1">本科</span>
             <span class="text-sm" style="color:var(--text-tertiary)">2020.09 — 2024.06</span>
           </div>
           <div class="flex flex-wrap items-center gap-2 mb-2">
