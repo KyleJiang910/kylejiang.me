@@ -14,9 +14,18 @@ function setTheme(theme) {
     document.documentElement.classList.remove('dark');
   }
   localStorage.setItem(THEME_KEY, theme);
+  updateMobileThemeLabel();
 }
 
+const themeToggleMobile = document.getElementById('themeToggleMobile');
+
 setTheme(getTheme());
+
+function updateMobileThemeLabel() {
+  if (!themeToggleMobile) return;
+  const isDark = document.documentElement.classList.contains('dark');
+  themeToggleMobile.textContent = isDark ? '切换浅色模式' : '切换深色模式';
+}
 
 function toggleTheme() {
   const next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
@@ -26,7 +35,7 @@ function toggleTheme() {
 }
 
 document.getElementById('themeToggle').addEventListener('click', toggleTheme);
-document.getElementById('themeToggleMobile').addEventListener('click', () => {
+themeToggleMobile.addEventListener('click', () => {
   toggleTheme();
   closeMobileMenu();
 });
