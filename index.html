@@ -619,18 +619,99 @@
         transform: none !important;
       }
 
-      /* --- Carousel: full-width cards matching other sections, auto height --- */
-      .carousel-card {
-        flex: 0 0 100% !important;
+      /* --- Experience: convert carousel to vertical accordion --- */
+      #experience .carousel-viewport {
+        overflow: visible !important;
+      }
+      #experience .carousel-track {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      #experience .carousel-card {
+        flex: 1 1 auto !important;
         min-height: auto !important;
         max-height: none !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        user-select: auto !important;
+        transition: box-shadow 0.35s ease !important;
       }
-      .carousel-arrow {
-        width: 2rem;
-        height: 2rem;
+      /* Compact header matching skill card height + expand indicator */
+      #experience .accordion-header {
+        padding: 0.4rem 0.75rem 1rem 0.75rem !important;
+        cursor: pointer;
+        position: relative;
+        -webkit-tap-highlight-color: transparent;
       }
-      .carousel-arrow-left  { left: -2px; }
-      .carousel-arrow-right { right: -2px; }
+      /* Arrow: centered at bottom of header */
+      #experience .accordion-header::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 2px;
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid var(--text-tertiary);
+        border-bottom: 2px solid var(--text-tertiary);
+        transform: translateX(-50%) rotate(45deg);
+        transition: transform 0.35s ease;
+      }
+      #experience .carousel-card.accordion-open .accordion-header::after {
+        transform: translateX(-50%) rotate(-135deg);
+      }
+      #experience .carousel-card > div:first-child .w-10.h-10 {
+        width: 1.75rem !important;
+        height: 1.75rem !important;
+      }
+      #experience .carousel-card > div:first-child .w-10.h-10 i {
+        width: 0.875rem !important;
+        height: 0.875rem !important;
+      }
+      #experience .carousel-card > div:first-child h3 {
+        font-size: 0.8125rem !important;
+      }
+      #experience .carousel-card > div:first-child p {
+        font-size: 0.6875rem !important;
+      }
+      #experience .carousel-card > div:first-child span[class*="whitespace-nowrap"] {
+        font-size: 0.625rem !important;
+      }
+      /* Divider hidden until expanded */
+      #experience .carousel-card > div:nth-child(2) {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.45s ease;
+      }
+      #experience .carousel-card.accordion-open > div:nth-child(2) {
+        max-height: 2px;
+      }
+      /* Content collapsible */
+      #experience .carousel-card > div:last-child {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.45s ease, padding 0.45s ease;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+      }
+      #experience .carousel-card.accordion-open > div:last-child {
+        max-height: 3000px;
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+      }
+      /* Hide arrows and dots */
+      #experience .carousel-arrow,
+      #experience .carousel-dots {
+        display: none !important;
+      }
+
+      /* Uniform image height in accordion cards */
+      #experience .activity-img {
+        height: 150px !important;
+        max-height: none !important;
+        object-fit: cover !important;
+      }
 
       /* --- Skill tags: slightly more compact --- */
       .skill-tag {
@@ -1075,11 +1156,11 @@
           <div id="carouselTrack" class="carousel-track">
             <!-- Card 1: OPPO -->
             <div class="carousel-card glass-card flex flex-col">
-              <div class="p-4 sm:p-5 flex-shrink-0">
+              <div class="p-4 sm:p-5 flex-shrink-0 accordion-header" onclick="this.closest('.carousel-card').classList.toggle('accordion-open')">
                 <div class="flex items-center justify-between mb-3">
                   <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,197,94,0.12)">
-                      <i data-lucide="smartphone" class="w-5 h-5" style="color:#22c55e"></i>
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden" style="background:rgba(34,197,94,0.12)">
+                      <img src="oppo.jpg" alt="OPPO" class="w-full h-full object-cover">
                     </div>
                     <div>
                       <div class="flex items-center gap-2">
@@ -1136,11 +1217,11 @@
 
             <!-- Card 2: 科大讯飞 -->
             <div class="carousel-card glass-card flex flex-col">
-              <div class="p-4 sm:p-5 flex-shrink-0">
+              <div class="p-4 sm:p-5 flex-shrink-0 accordion-header" onclick="this.closest('.carousel-card').classList.toggle('accordion-open')">
                 <div class="flex items-center justify-between mb-3">
                   <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(59,130,246,0.12)">
-                      <i data-lucide="car" class="w-5 h-5" style="color:#3b82f6"></i>
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden" style="background:rgba(59,130,246,0.12)">
+                      <img src="讯飞logo.jpg" alt="科大讯飞" class="w-full h-full object-cover">
                     </div>
                     <div>
                       <div class="flex items-center gap-2">
@@ -1166,7 +1247,7 @@
                 <div class="exp-sub-card">
                   <div class="flex items-center gap-2 w-full">
                     <i data-lucide="badge-check" class="w-4 h-4 flex-shrink-0" style="color:#8b5cf6"></i>
-                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">车机个人中心徽章（漫游中国）</h4>
+                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">车机个人中心徽章</h4>
                   </div>
                   <span class="text-xs" style="color:var(--text-secondary)"><b>背景：</b>面向年轻车主旅行打卡需求，广汽集团重点打造"漫游中国"车主个人徽章创新产品。</span>
                   <span class="text-xs" style="color:var(--text-secondary)"><b>动作：</b>开展车机版高德地图能力调研、竞品分析与用户需求梳理，协同研发团队定义徽章点亮规则与技术实现方案；输出完整需求文档，推动跨团队评审与落地。</span>
@@ -1187,6 +1268,10 @@
                   <div class="flex items-center gap-2 w-full">
                     <i data-lucide="search" class="w-4 h-4 flex-shrink-0" style="color:#ec4899"></i>
                     <h4 class="text-sm font-bold" style="color:var(--text-primary)">专项竞品调研</h4>
+                    <div class="flex flex-wrap gap-1 ml-auto flex-shrink-0">
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(34,197,94,0.1);color:#22c55e">调研 5 家车企</span>
+                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(34,197,94,0.1);color:#22c55e">线下试驾</span>
+                    </div>
                   </div>
                   <span class="text-xs" style="color:var(--text-secondary)"><b>背景：</b>负责业务对组内规划/开发中的若干需求进行线下竞品调研，了解主流趋势。</span>
                   <span class="text-xs" style="color:var(--text-secondary)"><b>成果：</b>独立线下调研、试驾 5 家新能源车企，采集产品真实表现和个人感受，总结输出相关分析报告和资料。</span>
@@ -1196,7 +1281,7 @@
 
             <!-- Card 3: 小橙智算 -->
             <div class="carousel-card glass-card flex flex-col">
-              <div class="p-4 sm:p-5 flex-shrink-0">
+              <div class="p-4 sm:p-5 flex-shrink-0 accordion-header" onclick="this.closest('.carousel-card').classList.toggle('accordion-open')">
                 <div class="flex items-center justify-between mb-3">
                   <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(249,115,22,0.12)">
@@ -1207,7 +1292,7 @@
                         <h3 class="text-base sm:text-lg font-bold" style="color:var(--text-primary)">小橙智算科技有限公司</h3>
                         <span class="px-2 py-0.5 rounded-full text-xs font-medium flex-shrink-0" style="background:rgba(249,115,22,0.12);color:#f97316">实习</span>
                       </div>
-                      <p class="text-sm font-medium" style="color:var(--text-secondary)">ToG 算法服务 · 产品实习生</p>
+                      <p class="text-sm font-medium" style="color:var(--text-secondary)">智慧交警智能体 · 产品实习生</p>
                     </div>
                   </div>
                   <span class="text-sm font-medium whitespace-nowrap ml-3" style="color:var(--text-tertiary)">2025.08 — 2025.11</span>
@@ -1218,11 +1303,7 @@
                 <div class="exp-sub-card">
                   <div class="flex items-center gap-2 w-full">
                     <i data-lucide="brain" class="w-4 h-4 flex-shrink-0" style="color:#8b5cf6"></i>
-                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">智慧交警智能体</h4>
-                    <div class="flex flex-wrap gap-1 ml-auto flex-shrink-0">
-                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(34,197,94,0.1);color:#22c55e">50+ 路口效率 +15%</span>
-                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(34,197,94,0.1);color:#22c55e">年省警力 ~500 万</span>
-                    </div>
+                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">用户调研&amp;产品售前</h4>
                   </div>
                   <span class="text-xs" style="color:var(--text-secondary)"><b>背景：</b>交通信号灯优化算法的商业化转化，推动算法落地为可复用、可推广的软件产品。</span>
                   <span class="text-xs" style="color:var(--text-secondary)"><b>动作：</b>参与多地项目售前支持与实际交付工作；访谈 10 余位一线交警，挖掘真实场景与需求；完成 8 款竞品的多维度调研与对比分析。</span>
@@ -1253,11 +1334,11 @@
 
             <!-- Card 4: 早吖早 -->
             <div class="carousel-card glass-card flex flex-col">
-              <div class="p-4 sm:p-5 flex-shrink-0">
+              <div class="p-4 sm:p-5 flex-shrink-0 accordion-header" onclick="this.closest('.carousel-card').classList.toggle('accordion-open')">
                 <div class="flex items-center justify-between mb-3">
                   <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(251,191,36,0.12)">
-                      <i data-lucide="sunrise" class="w-5 h-5" style="color:#f59e0b"></i>
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden" style="background:rgba(251,191,36,0.12)">
+                      <img src="早呀早logo.jpg" alt="早吖早" class="w-full h-full object-cover">
                     </div>
                     <div>
                       <div class="flex items-center gap-2">
@@ -1272,19 +1353,53 @@
               </div>
               <div class="glass-divider mx-4 sm:mx-5 flex-shrink-0"></div>
               <div class="p-4 sm:p-5 flex flex-col gap-3 flex-1 overflow-y-auto">
+                <!-- 产品介绍 -->
                 <div class="exp-sub-card">
                   <div class="flex items-center gap-2 w-full">
-                    <i data-lucide="sunrise" class="w-4 h-4 flex-shrink-0" style="color:#f59e0b"></i>
-                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">早餐预定 + 送餐到寝</h4>
-                    <div class="flex flex-wrap gap-1 ml-auto flex-shrink-0">
-                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(251,191,36,0.12);color:#b45309">年营收 500 万</span>
-                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(251,191,36,0.12);color:#b45309">净利润 80 万</span>
-                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(251,191,36,0.12);color:#b45309">服务用户 30 万+</span>
-                      <span class="px-2 py-0.5 rounded-md text-xs font-semibold" style="background:rgba(251,191,36,0.12);color:#b45309">公益 5,000+ 人次</span>
-                    </div>
+                    <i data-lucide="lightbulb" class="w-4 h-4 flex-shrink-0" style="color:#f59e0b"></i>
+                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">产品介绍</h4>
                   </div>
-                  <span class="text-xs" style="color:var(--text-secondary)"><b>背景：</b>校园线上早餐预定创业项目，主打早餐预定 + 送餐到寝服务，业务覆盖广州 6 所高校的 12 个校区。</span>
-                  <span class="text-xs" style="color:var(--text-secondary)"><b>动作：</b>统筹财务核算与后台数据监控；联动支教组织策划落地爱心早餐公益联名活动；参与供应商渠道拓展。</span>
+                  <span class="text-xs leading-relaxed" style="color:var(--text-secondary)">校园早餐 O2O 创业项目，以"早餐预定 + 送餐到寝"为核心服务，覆盖<span class="font-bold" style="color:#f59e0b">广州 6 所高校 12 个校区</span>。</span>
+                </div>
+
+                <!-- 核心工作 -->
+                <div class="exp-sub-card">
+                  <div class="flex items-center gap-2 w-full">
+                    <i data-lucide="briefcase" class="w-4 h-4 flex-shrink-0" style="color:#f59e0b"></i>
+                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">核心工作</h4>
+                  </div>
+                  <ul class="space-y-1.5 text-xs" style="color:var(--text-secondary);list-style:none;padding-left:0;">
+                    <li class="flex gap-2"><span class="mt-1 w-1 h-1 rounded-full flex-shrink-0" style="background:#f59e0b"></span>统筹财务核算与后台数据监控，负责供应商维护与采购成本洽谈，制定价格策略，保持成本领先优势</li>
+                    <li class="flex gap-2"><span class="mt-1 w-1 h-1 rounded-full flex-shrink-0" style="background:#f59e0b"></span><span>负责新媒体运营及品牌公益联动，联合支教组织落地爱心早餐公益活动；精细化运营微信社群<span class="font-bold" style="color:#f59e0b">超 40 个</span>，市场渗透率<span class="font-bold" style="color:#f59e0b">超 32%</span></span></li>
+                  </ul>
+                </div>
+
+                <!-- 产品业绩 -->
+                <div class="exp-sub-card">
+                  <div class="flex items-center gap-2 w-full">
+                    <i data-lucide="trending-up" class="w-4 h-4 flex-shrink-0" style="color:#f59e0b"></i>
+                    <h4 class="text-sm font-bold" style="color:var(--text-primary)">产品业绩</h4>
+                  </div>
+                  <div class="flex flex-wrap gap-x-3 gap-y-1 text-xs" style="color:var(--text-secondary)">
+                    <span>全平台关注 <span class="font-bold" style="color:#f59e0b">7 万+</span></span>
+                    <span class="hidden sm:inline" style="color:var(--text-tertiary)">|</span>
+                    <span>推文均阅读 <span class="font-bold" style="color:#f59e0b">8,000+</span></span>
+                    <span class="hidden sm:inline" style="color:var(--text-tertiary)">|</span>
+                    <span>第二年营收 <span class="font-bold" style="color:#f59e0b">500 万+</span></span>
+                    <span class="hidden sm:inline" style="color:var(--text-tertiary)">|</span>
+                    <span>净利润 <span class="font-bold" style="color:#f59e0b">80 万+</span></span>
+                    <span class="hidden sm:inline" style="color:var(--text-tertiary)">|</span>
+                    <span>服务用户 <span class="font-bold" style="color:#f59e0b">30 万+</span>人次</span>
+                    <span class="hidden sm:inline" style="color:var(--text-tertiary)">|</span>
+                    <span>公益联名 <span class="font-bold" style="color:#f59e0b">5,000+</span>人次</span>
+                  </div>
+                </div>
+
+                <!-- 配图 -->
+                <div class="flex gap-3">
+                  <img src="活动运营2.jpg" alt="活动运营2" class="rounded-xl object-contain flex-1 min-w-0 activity-img" style="max-height:180px;">
+                  <img src="活动运营3.jpg" alt="活动运营3" class="rounded-xl object-contain flex-1 min-w-0 activity-img" style="max-height:180px;">
+                  <img src="活动运营.jpg" alt="活动运营" class="rounded-xl object-contain flex-1 min-w-0 activity-img" style="max-height:180px;">
                 </div>
               </div>
             </div>
@@ -1325,11 +1440,11 @@
         <a href="blog/post-1.html" class="glass-card p-6 flex flex-col sm:flex-row sm:items-center gap-4 reveal hover:shadow-lg transition-all duration-300 group no-underline">
           <div class="flex-1">
             <div class="flex items-center gap-3 mb-2">
-              <span class="px-2 py-0.5 rounded-full text-xs font-medium" style="background:rgba(168,85,247,0.1);color:#a855f7">产品设计</span>
-              <span class="text-xs" style="color:var(--text-tertiary)">2025.12.15</span>
+              <span class="px-2 py-0.5 rounded-full text-xs font-medium" style="background:rgba(249,115,22,0.1);color:#f97316">竞品调研</span>
+              <span class="text-xs" style="color:var(--text-tertiary)">2026.05.10</span>
             </div>
-            <h3 class="text-lg font-bold mb-2 group-hover:gradient-text transition-all" style="color:var(--text-primary)">为什么"简洁"是 B 端产品的第一原则？</h3>
-            <p class="text-sm leading-relaxed" style="color:var(--text-secondary)">从一次客户演示失败的复盘出发，聊聊 B 端产品为什么容易变得复杂，以及如何用"减法思维"做产品决策。</p>
+            <h3 class="text-lg font-bold mb-2 group-hover:gradient-text transition-all" style="color:var(--text-primary)">从ToG到ToB到ToC，我离用户越来越近了</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--text-secondary)">三段实习横跨三个赛道，三种截然不同的竞品调研体验。离用户越近，真相越清晰。</p>
           </div>
           <div class="flex-shrink-0">
             <span class="inline-flex items-center gap-1 text-sm font-medium" style="color:#6366f1">
@@ -1342,11 +1457,11 @@
         <a href="blog/post-2.html" class="glass-card p-6 flex flex-col sm:flex-row sm:items-center gap-4 reveal hover:shadow-lg transition-all duration-300 group no-underline">
           <div class="flex-1">
             <div class="flex items-center gap-3 mb-2">
-              <span class="px-2 py-0.5 rounded-full text-xs font-medium" style="background:rgba(34,197,94,0.1);color:#22c55e">用户研究</span>
-              <span class="text-xs" style="color:var(--text-tertiary)">2025.10.28</span>
+              <span class="px-2 py-0.5 rounded-full text-xs font-medium" style="background:rgba(34,197,94,0.1);color:#22c55e">产品方法论</span>
+              <span class="text-xs" style="color:var(--text-tertiary)">2026.04.22</span>
             </div>
-            <h3 class="text-lg font-bold mb-2 group-hover:gradient-text transition-all" style="color:var(--text-primary)">学会问"愚蠢的问题"：我的用户访谈方法论</h3>
-            <p class="text-sm leading-relaxed" style="color:var(--text-secondary)">大多数用户访谈的问题在于提问者太聪明。总结我踩过的坑和提炼的访谈框架。</p>
+            <h3 class="text-lg font-bold mb-2 group-hover:gradient-text transition-all" style="color:var(--text-primary)">做自己不是目标用户的产品经理，如何共情用户？</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--text-secondary)">给交警、车主、海外用户做产品——我从来不是他们的目标用户。但我找到了一套共情方法。</p>
           </div>
           <div class="flex-shrink-0">
             <span class="inline-flex items-center gap-1 text-sm font-medium" style="color:#6366f1">
@@ -1359,11 +1474,11 @@
         <a href="blog/post-3.html" class="glass-card p-6 flex flex-col sm:flex-row sm:items-center gap-4 reveal hover:shadow-lg transition-all duration-300 group no-underline">
           <div class="flex-1">
             <div class="flex items-center gap-3 mb-2">
-              <span class="px-2 py-0.5 rounded-full text-xs font-medium" style="background:rgba(251,191,36,0.1);color:#f59e0b">行业观察</span>
-              <span class="text-xs" style="color:var(--text-tertiary)">2025.09.10</span>
+              <span class="px-2 py-0.5 rounded-full text-xs font-medium" style="background:rgba(59,130,246,0.1);color:#3b82f6">Vibe Coding</span>
+              <span class="text-xs" style="color:var(--text-tertiary)">2026.05.16</span>
             </div>
-            <h3 class="text-lg font-bold mb-2 group-hover:gradient-text transition-all" style="color:var(--text-primary)">抖音外卖为什么做不起来？一个产品经理的思考</h3>
-            <p class="text-sm leading-relaxed" style="color:var(--text-secondary)">从用户场景、心智模型和交易成本三个角度，分析抖音在外卖赛道的结构性困境。</p>
+            <h3 class="text-lg font-bold mb-2 group-hover:gradient-text transition-all" style="color:var(--text-primary)">这个网站诞生记：我的 Vibe Coding 方法论 1.0</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--text-secondary)">从一个空白文件夹到双端适配的完整网站，全程与 AI 对话完成。复盘 + 方法论沉淀。</p>
           </div>
           <div class="flex-shrink-0">
             <span class="inline-flex items-center gap-1 text-sm font-medium" style="color:#6366f1">

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="为什么「简洁」是 B 端产品的第一原则？ — 蒋天祺的产品思考">
-  <title>为什么「简洁」是 B 端产品的第一原则？ — 蒋天祺</title>
+  <meta name="description" content="从ToG到ToB到ToC，我离用户越来越近了 — 蒋天祺的产品思考">
+  <title>从ToG到ToB到ToC，我离用户越来越近了 — 蒋天祺</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -51,7 +51,6 @@
 </head>
 <body class="bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 font-sans transition-colors duration-300">
 
-  <!-- Navbar -->
   <nav class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       <a href="../index.html" class="text-lg font-bold text-slate-900 dark:text-white tracking-tight">
@@ -69,75 +68,82 @@
     </div>
   </nav>
 
-  <!-- Article -->
   <article class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-    <!-- Header -->
     <header class="mb-10">
       <div class="flex items-center gap-3 mb-4">
-        <span class="px-2.5 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 rounded-md text-xs font-medium">产品设计</span>
-        <span class="text-sm text-slate-400">2025.12.15</span>
+        <span class="px-2.5 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 rounded-md text-xs font-medium">竞品调研</span>
+        <span class="text-sm text-slate-400">2026.05.10</span>
       </div>
       <h1 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white leading-tight mb-4">
-        为什么「简洁」是 B 端产品的第一原则？
+        从ToG到ToB到ToC，我离用户越来越近了
       </h1>
       <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
-        从一次客户演示失败的复盘出发，聊聊 B 端产品为什么容易变得复杂，以及如何用「减法思维」做产品决策。
+        三段实习横跨三个赛道，三种截然不同的竞品调研体验。离用户越近，真相越清晰。
       </p>
     </header>
 
-    <!-- Content -->
     <div class="prose text-base">
-      <p>几个月前，我参与了一次 SaaS 产品的客户演示。销售同事在台上展示了 20 分钟，把 50 多个功能逐个介绍了一遍。台下的客户代表面无表情。演示结束后，客户说了一句话：<strong>「你们的功能确实很多，但我们团队只有 5 个人，我只想知道能不能帮我解决排班问题。」</strong></p>
+      <p>在一年之内，我先后在<strong>ToG、ToB、ToC</strong>三个赛道做了产品实习生。一个意外的收获是：同样是做竞品调研，三种业务模式下产品经理的角色、获取信息的方式、与用户的距离，完全不同。</p>
 
-      <p>那一刻我意识到：我们习惯性地用「功能多」来证明产品价值，却忘了客户真正关心的从来不是功能数量，而是<strong>能否用最低的认知成本解决他的问题</strong>。</p>
+      <h2>ToG：在信息黑洞里找信号</h2>
 
-      <h2>一、B 端产品为什么容易「变重」？</h2>
+      <p>小橙智算做的是智慧交通信号灯优化，客户是各地交警支队。我的第一个竞品调研任务就是摸清市面上做信控优化的厂商情况。</p>
 
-      <p>B 端产品和 C 端产品有一个根本性的区别：<strong>买单的人和用的人往往不是同一批人</strong>。老板关注 ROI，一线员工关注好不好用。为了签下客户，销售会不断要求加功能——「竞品有这个我们没有」「客户说没有 XX 功能不签」。产品经理如果来者不拒，产品就会变成一个臃肿的瑞士军刀：什么都能做，什么都做不好。</p>
+      <p>打开搜索引擎一搜，我的天——<strong>几乎每家厂商的官网都在说同一套话</strong>："AI赋能""全局最优""毫秒级响应"。没有产品定价，没有功能对比，连个像样的产品截图都找不到。更难受的是，每家的宣传材料都把自己吹得天花乱坠，<strong>找不到任何客观的缺点或短板</strong>。</p>
 
-      <p>还有几个常见的「增重」驱动力：</p>
-
-      <ul>
-        <li><strong>大客户定制需求</strong>：一个头部客户要求的功能，可能只适用于他一家，但为了合同金额，不得不做。</li>
-        <li><strong>内部团队博弈</strong>：设计团队想做「体验标杆」，研发想做「技术挑战」，结果产品承载了太多非用户价值的东西。</li>
-        <li><strong>缺乏「做减法」的决策机制</strong>：加功能容易（没人会因为提需求被追责），砍功能难（砍掉了出问题谁来担？）。</li>
-      </ul>
-
-      <h2>二、简洁 ≠ 简陋</h2>
-
-      <p>这里需要澄清一个常见的误解：<strong>简洁不是功能少，而是认知负担小</strong>。</p>
-
-      <p>举两个例子：</p>
-      <ul>
-        <li><strong>Salesforce</strong>：功能极多，但通过模块化设计让每个角色的用户只看到自己需要的部分。对单个用户来说，它很简洁。</li>
-        <li><strong>Notion</strong>：底层能力非常强大（数据库、公式、自动化），但新用户打开就是一个空白页面，可以像写文档一样开始用。这就是「渐进式披露」。</li>
-      </ul>
-
-      <p>好的 B 端产品设计，是把复杂性封装起来，把简洁暴露给用户。</p>
-
-      <h2>三、我在项目中实践「减法」的三个原则</h2>
-
-      <h3>原则 1：用「不做」来定义产品</h3>
-      <p>在校园社团管理 SaaS 项目中，我们收到了很多需求：财务报销、场地申请、活动签到、成员考核……但 MVP 阶段，我明确把范围收敛到<strong>「活动管理 + 成员管理」</strong>两个模块。判断标准很简单：<strong>没有这两个功能，社团就不能正常运转吗？</strong>如果不是，就放进 V2 需求池。</p>
-
-      <h3>原则 2：从「用户任务」出发，而非「功能列表」出发</h3>
-      <p>做运营数据看板时，我们的初始方案是一个可自由配置的仪表盘。但调研后发现，运营同学每周五下午都要做同一件事：<strong>把 5 个系统的数据拉出来，拼成一张周报表</strong>。于是我们把 V1 做成了「一键生成周报」，而非「通用 BI 工具」。上线第一周就有 12 个运营同学自发使用。</p>
-
-      <h3>原则 3：定期做「功能体检」</h3>
-      <p>每个功能上线后，我会在 30 天后回看数据：使用率、完成率、是否产生了预期的行为改变。如果一个功能连续 2 次体检都不达标，就进入「待砍」清单。产品经理的勇气不只是「敢做」，更是<strong>「敢砍」</strong>。</p>
-
-      <h2>四、总结</h2>
-
-      <p>回到标题——为什么「简洁」是 B 端产品第一原则？</p>
+      <p>对于一个刚入行的实习生来说，这个阶段极度痛苦。看了一周的资料，脑子里还是一团浆糊：这些厂商到底有什么区别？谁好谁坏？谁更便宜？</p>
 
       <blockquote>
-        <p>因为 B 端用户是被迫使用你的产品的。他们没有探索的耐心，不会觉得「功能多」是赚到了。他们只想快点完成手头的任务，然后下班。</p>
+        <p>ToG赛道的信息壁垒，不在于找不到信息，而在于所有公开信息都是精心包装过的"正面信息"。你看到的不是产品，是宣传册。</p>
       </blockquote>
 
-      <p>尊重用户的注意力，就是最好的用户体验。</p>
+      <p>转机出现在我跟着团队去做售前支持。在项目会议室里，交警支队的领导们会<strong>直接说出他们调研过哪几家、觉得哪家不行、为什么不行</strong>。这些信息在互联网上完全找不到，但在客户口中，它们就是最真实的竞品情报。</p>
+
+      <p>我还跟着去现场看了一家竞品的实际运行效果——路口数据采集的延迟、特殊天气下的误判、与现有信号机的兼容性问题，这些在PPT里永远不会出现的东西，在现场一目了然。</p>
+
+      <p><strong>感悟：</strong>ToG产品的竞品调研，核心能力不是信息检索，而是<strong>现场获取一手信息的能力</strong>。你得去客户那里、去项目现场、去和一线使用者聊天。信息的壁垒越高，一手信息就越珍贵。</p>
+
+      <h2>ToB：假装成一个真实的买家</h2>
+
+      <p>在科大讯飞做智能座舱产品时，竞品调研的方向变成了车机系统。这次好一些——车企的产品是面向消费者的，至少你能找到产品、看到界面、体验到功能。</p>
+
+      <p>但新问题来了：<strong>你不是真实用户，你怎么知道自己的体验判断是对的？</strong></p>
+
+      <p>为了调研竞品车机系统，我做了一件很多产品经理可能没做过的事：<strong>假扮成买车的用户，去 4S 店里试驾了 5 个品牌的车型</strong>。一边试驾一边偷偷用手机录像，记录车机操作流程。面对销售的追问"您预算多少""今天能定吗"，还得硬着头皮扮演一个真实的购车者。</p>
+
+      <blockquote>
+        <p>在副驾上偷偷录车机操作视频的时候，才真正体会到什么叫"做产品的心理素质"。</p>
+      </blockquote>
+
+      <p>但即使这样，调研也有明显的局限：<strong>试驾只能覆盖浅层体验</strong>。车机的长期使用体验——比如语音助手在高速噪音下的识别率、导航在隧道里的表现、系统用了半年后的卡顿情况——你在 20 分钟的试驾里根本测不出来。</p>
+
+      <p><strong>感悟：</strong>ToB产品的竞品调研，你离用户近了一步，但还不够近。你"扮演"用户，但你不是用户。体验的广度和深度之间，你只能选择广度。</p>
+
+      <h2>ToC：自己就是用户，但也是陷阱</h2>
+
+      <p>到了 OPPO 做海外应用商店，竞品调研的体验又不一样了。</p>
+
+      <p>应用商店是典型的 C 端产品。我日常使用的手机就是 OPPO 的，应用商店是我每天都会打开的东西。Google Play、Apple App Store 也都是我可以随时体验的产品。做竞品调研时，<strong>下载、截图、对比、分析，全套流程都可以在工位上完成</strong>。</p>
+
+      <p>但"自己就是用户"也有一个巨大的陷阱：<strong>你以为的"共识"可能只是你的个人偏好</strong>。我喜欢的功能不一定印尼用户喜欢，我反感的交互可能东南亚用户早就习惯了。</p>
+
+      <p>所以在 OPPO，竞品调研的核心不再是"获取信息"（信息太容易获取了），而是<strong>"判断信息的权重"</strong>。面对海量的用户反馈、A/B 实验数据、市场报告，产品经理需要回答的不是"竞品做了什么"，而是<strong>"哪些是值得我们跟的，哪些是竞品自己也在纠结的"</strong>。</p>
+
+      <h2>三段实习，一条脉络</h2>
+
+      <p>回过头看这三段经历，有一条清晰的演变：</p>
+
+      <ul>
+        <li><strong>ToG（小橙）：</strong>信息极度稀缺，竞品调研靠的是"跑现场、见客户、听真话"。产品经理离用户最远，需要主动走近。</li>
+        <li><strong>ToB（讯飞）：</strong>信息相对可获取，但体验深度有限。产品经理需要"扮演用户"，在有限场景下尽可能还原真实体验。</li>
+        <li><strong>ToC（OPPO）：</strong>信息唾手可得，但噪音也最大。产品经理需要从海量数据中提取信号，区分"个人偏好"和"用户共识"。</li>
+      </ul>
+
+      <p>离用户越近，调研的门槛越低——但做出正确判断的难度却不一定降低。因为当信息不再稀缺时，<strong>判断力</strong>就变成了最稀缺的能力。</p>
+
+      <p>而一个产品经理的成长，或许就体现在：从"找不到信息"到"找得到信息"，再到<strong>"知道哪些信息值得信"</strong>。</p>
     </div>
 
-    <!-- Back -->
     <div class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-700">
       <a href="../index.html#blog" class="inline-flex items-center gap-2 text-brand-600 dark:text-brand-400 font-medium hover:gap-3 transition-all">
         <i data-lucide="arrow-left" class="w-4 h-4"></i> 回到产品思考

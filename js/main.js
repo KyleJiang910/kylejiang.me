@@ -250,6 +250,7 @@ document.querySelectorAll('.reveal').forEach(el => {
   updateCarousel(0, false);
 })();
 
+
 /* ========== SKILL CAROUSEL ========== */
 (function () {
   var carousels = document.querySelectorAll('.skill-carousel[data-skills]');
